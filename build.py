@@ -196,6 +196,11 @@ def render(body):
     body = sub_brand(body)
     body = re.sub(r"\[\[p:([\w-]+)\]\]", lambda m: product_card(m.group(1)), body)
     body = re.sub(
+        r"\[\[btn:([\w-]+)\|([^\]]+)\]\]",
+        lambda m: f'<a class="btn" href="{amz(PRODUCTS[m.group(1)]["asin"])}" rel="sponsored nofollow noopener" target="_blank">{esc(m.group(2))} &rarr;</a>',
+        body,
+    )
+    body = re.sub(
         r"\[\[buy:([\w-]+)\|([^\]]+)\]\]",
         lambda m: f'<a href="{amz(PRODUCTS[m.group(1)]["asin"])}" rel="sponsored nofollow noopener" target="_blank">{esc(m.group(2))}</a>',
         body,

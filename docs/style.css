@@ -361,3 +361,5 @@ footer.site p{margin:8px 0;line-height:1.55;color:#94a3b8}
 .fit-ok{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
 .fit-warn{background:#fefce8;border-color:#fde047;color:#854d0e}
 .fit-no{background:#fef2f2;border-color:#fecaca;color:#991b1b}
+
+@media print{header.site,.disc-bar,.filter-bar,.preset-row,.hero-actions,.btn,.btn-outline{display:none!important}body{background:#fff;color:#000}.hero{background:#fff;color:#000;padding:12px 0;border-bottom:2px solid #000}.hero h1,.hero p.hero-lede{color:#000}.hero::before,.hero-art{display:none}}

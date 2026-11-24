@@ -198,7 +198,7 @@ COMPARE_PAGE = dict(
       </ul>
     </div>
     <div class="brand-foot">
-      <a class="btn" href="https://www.amazon.co.uk/dp/B095QX1FSR?tag=stewraw25-21" rel="sponsored nofollow noopener" target="_blank">R10 on Amazon &rarr;</a>
+      [[btn:garmin-approach-r10|R10 on Amazon]]
       <a class="btn-outline" href="[[BP]]/golf/garmin-r50-vs-skytrak-st-max/">R50 vs ST MAX</a>
     </div>
   </div>
@@ -214,7 +214,7 @@ COMPARE_PAGE = dict(
       </ul>
     </div>
     <div class="brand-foot">
-      <a class="btn" href="https://www.amazon.co.uk/dp/B0BTPZMCSF?tag=stewraw25-21" rel="sponsored nofollow noopener" target="_blank">MLM2PRO on Amazon &rarr;</a>
+      [[btn:rapsodo-mlm2pro|MLM2PRO on Amazon]]
       <a class="btn-outline" href="[[BP]]/golf/launch-monitors-under-1000/">Under £1,000 guide</a>
     </div>
   </div>
@@ -230,7 +230,7 @@ COMPARE_PAGE = dict(
       </ul>
     </div>
     <div class="brand-foot">
-      <a class="btn" href="https://www.amazon.co.uk/dp/B0FXNBJFG3?tag=stewraw25-21" rel="sponsored nofollow noopener" target="_blank">ST MAX on Amazon &rarr;</a>
+      [[btn:skytrak-st-max|ST MAX on Amazon]]
       <a class="btn-outline" href="[[BP]]/golf/garmin-r50-vs-skytrak-st-max/">Compare with R50</a>
     </div>
   </div>
@@ -245,8 +245,8 @@ COMPARE_PAGE = dict(
       </ul>
     </div>
     <div class="brand-foot">
-      <a class="btn" href="https://www.amazon.co.uk/dp/B0DD83PR5L?tag=stewraw25-21" rel="sponsored nofollow noopener" target="_blank">Square Indoor on Amazon &rarr;</a>
-      <a class="btn-outline" href="https://www.amazon.co.uk/dp/B0HLDR2FBB?tag=stewraw25-21" rel="sponsored nofollow noopener" target="_blank">Omni on Amazon</a>
+      [[btn:square-golf-indoor|Square Indoor on Amazon]]
+      [[buy:square-golf-omni|Omni on Amazon]]
     </div>
   </div>
 
@@ -261,7 +261,7 @@ COMPARE_PAGE = dict(
       </ul>
     </div>
     <div class="brand-foot">
-      <a class="btn" href="https://www.amazon.co.uk/dp/B0GP22ZYY5?tag=stewraw25-21" rel="sponsored nofollow noopener" target="_blank">LM1 on Amazon &rarr;</a>
+      [[btn:shot-scope-lm1|LM1 on Amazon]]
       <a class="btn-outline" href="[[BP]]/golf/launch-monitors-under-1000/">Under £1,000 guide</a>
     </div>
   </div>
