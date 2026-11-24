@@ -34,6 +34,7 @@ PAGES = [
 # ---------------- HOME ----------------
 dict(
     path="/",
+    direct_answer=("What does [[SITE_NAME]] cover?", "[[SITE_NAME]] compares 8 home golf launch monitor brands, UK room size requirements (2.74 m to 3.05 m+ ceilings), golf nets, mats, projectors and sim racing rigs using makers' manuals and 37 Amazon UK listings checked on [[checked]]."),
     title="[[SITE_NAME]]: UK Home Golf Bays, Brand Hub & Sim Racing",
     short="Home",
     description="UK guides to home golf simulators and sim racing rigs: compare 8 launch monitor brands, check room sizes from makers' manuals, and compare Amazon UK gear.",
@@ -93,6 +94,7 @@ dict(
 # ---------------- GOLF HUB ----------------
 dict(
     path="/golf/",
+    direct_answer=("What do you need for a UK home golf setup?", "Start with a protective hitting mat and net (from £46.74) plus a launch monitor (from £179.00 for Shot Scope LM1 or £377.39 for Garmin R10), or step up to a full indoor bay with a padded enclosure, impact screen and short-throw projector."),
     title="Home golf simulators and practice set-ups (UK)",
     short="Home golf",
     description="Everything that goes into a home golf bay in the UK: launch monitors, nets and impact screens, hitting mats, enclosures, projectors and room sizes.",
@@ -596,6 +598,7 @@ dict(
 # ---------------- RACING HUB ----------------
 dict(
     path="/racing/",
+    direct_answer=("What do you need for a home sim racing rig?", "You need a wheel base and pedals (from £199.99 geared kits to £264.99–£504.95 direct drive), a sturdy desk clamp, folding seat (~136 x 54 cm) or fixed cockpit (up to 170 x 60 cm), and a TV or monitor stand."),
     title="Sim racing at home: wheels, pedals, cockpits and stands (UK)",
     short="Sim racing",
     description="UK guides to a home sim racing set-up: wheel bases, pedals, cockpits and rigs, seats and monitor stands, with Amazon UK prices checked 24 Nov 2026.",
