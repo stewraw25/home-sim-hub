@@ -1,25 +1,115 @@
-import re,os,sys,urllib.request,html,json
-ROOT="docs"; BP="/home-sim-hub"; errs=[]; ext=set(); pages=0
-for dp,_,fs in os.walk(ROOT):
+#!/usr/bin/env python3
+"""SEO, affiliate-compliance, schema, and link checker for docs/."""
+import html, json, os, re
+from urllib.parse import urlparse
+
+ROOT = "docs"
+CFG = json.load(open("config.json"))
+BASE_URL = CFG["base_url"].rstrip("/")
+BP = urlparse(BASE_URL).path.rstrip("/")
+TAG = CFG["amazon_tag"]
+
+errs = []
+ext = set()
+pages = 0
+titles = {}
+descs = {}
+
+for dp, _, fs in os.walk(ROOT):
     for f in fs:
-        if not f.endswith(".html"): continue
-        pages+=1; p=os.path.join(dp,f); s=open(p).read()
-        if 'name="robots" content="noindex' not in s: errs.append(("no noindex",p))
-        if "As an Amazon Associate" not in s: errs.append(("no disclosure",p))
-        for m in re.finditer(r'<a [^>]*href="([^"]+)"[^>]*>',s):
-            tag,href=m.group(0),m.group(1)
+        if not f.endswith(".html"):
+            continue
+        pages += 1
+        p = os.path.join(dp, f)
+        s = open(p).read()
+
+        # Robots check
+        if CFG["noindex"]:
+            if 'name="robots" content="noindex, nofollow"' not in s:
+                errs.append(("no noindex", p))
+        else:
+            if 'name="robots" content="index, follow"' not in s:
+                errs.append(("no index meta", p))
+
+        # Disclosure check
+        if "As an Amazon Associate" not in s:
+            errs.append(("no disclosure", p))
+
+        # H1 count
+        if s.count("<h1") != 1:
+            errs.append(("h1 count", p, s.count("<h1")))
+
+        # Title uniqueness & length
+        tm = re.search(r"<title>(.*?)</title>", s)
+        if not tm:
+            errs.append(("missing title", p))
+        else:
+            t = html.unescape(tm.group(1))
+            if len(t) > 70:
+                errs.append(("title > 70", p, len(t), t))
+            if t in titles:
+                errs.append(("duplicate title", p, titles[t]))
+            titles[t] = p
+
+        # Meta description uniqueness & length
+        dm = re.search(r'<meta name="description" content="([^"]*)"', s)
+        if not dm:
+            errs.append(("missing description", p))
+        else:
+            d = html.unescape(dm.group(1))
+            if not (40 <= len(d) <= 170):
+                errs.append(("desc length", p, len(d)))
+            if d in descs:
+                errs.append(("duplicate desc", p, descs[d]))
+            descs[d] = p
+
+        # Canonical check
+        cm = re.search(r'<link rel="canonical" href="([^"]+)"', s)
+        if not cm or not cm.group(1).startswith(BASE_URL):
+            errs.append(("bad canonical", p, cm.group(1) if cm else None))
+
+        # Image alt text check
+        for im in re.finditer(r"<img\b([^>]*)>", s):
+            if not re.search(r'\balt="[^"]+"', im.group(1)):
+                errs.append(("missing img alt", p, im.group(0)))
+
+        # Links & anchors
+        for m in re.finditer(r'<a [^>]*href="([^"]+)"[^>]*>', s):
+            tag, href = m.group(0), m.group(1)
             if "amazon.co.uk/dp/" in href:
-                if "tag=stewraw25-21" not in href: errs.append(("bad tag",p,href))
-                if 'rel="sponsored nofollow' not in tag: errs.append(("no rel",p,href))
+                if f"tag={TAG}" not in href:
+                    errs.append(("bad tag", p, href))
+                if 'rel="sponsored nofollow' not in tag:
+                    errs.append(("no rel", p, href))
                 ext.add(href)
-            elif href.startswith(BP):
-                path=href[len(BP):].split("#")[0]
-                t=os.path.join(ROOT,path.lstrip("/"))
-                if path.endswith("/"): t=os.path.join(t,"index.html")
-                if not os.path.exists(t): errs.append(("broken internal",p,href))
-            elif href.startswith("http"): ext.add(href)
-            else: errs.append(("relative/odd",p,href))
-        for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>',s): json.loads(m.group(1))
-        if re.search(r'(?i)"@type": ?"(Review|AggregateRating)"',s): errs.append(("review schema",p))
-        if s.count("<h1")!=1: errs.append(("h1 count",p))
-print("pages",pages,"external links",len(ext)); print("\n".join(map(str,errs)) or "NO ERRORS")
+            elif href.startswith("#"):
+                aid = href[1:]
+                if f'id="{aid}"' not in s:
+                    errs.append(("broken local anchor", p, href))
+            elif (BP and href.startswith(BP)) or (not BP and href.startswith("/")):
+                rel_path = href[len(BP):] if BP else href
+                path_part, _, frag = rel_path.partition("#")
+                t = os.path.join(ROOT, path_part.lstrip("/"))
+                if path_part.endswith("/") or path_part == "":
+                    t = os.path.join(t, "index.html")
+                if not os.path.exists(t):
+                    errs.append(("broken internal", p, href))
+                elif frag and f'id="{frag}"' not in open(t).read():
+                    errs.append(("broken internal anchor", p, href))
+            elif href.startswith("http"):
+                ext.add(href)
+            else:
+                errs.append(("relative/odd", p, href))
+
+        # JSON-LD check
+        ld_blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', s)
+        if not ld_blocks:
+            errs.append(("missing json-ld", p))
+        for raw_ld in ld_blocks:
+            json.loads(raw_ld)
+        if re.search(r'(?i)"@type": ?"(Review|AggregateRating)"', s):
+            errs.append(("review schema", p))
+
+print(f"Checked {pages} HTML pages, {len(ext)} unique external links, {len(titles)} unique titles")
+print("\n".join(map(str, errs)) or "NO ERRORS")
+raise SystemExit(1 if errs else 0)

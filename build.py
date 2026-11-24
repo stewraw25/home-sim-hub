@@ -31,6 +31,8 @@ BLOCK = re.compile(
 )
 
 def u(path):
+    if path.startswith("#"):
+        return path
     return BASE_PATH + path
 
 def full(path):
@@ -242,7 +244,7 @@ def build_related_html(rel):
 def layout(pg, body):
     path = pg["path"]
     raw_title = sub_brand(pg["title"])
-    title = raw_title if path == "/" else f"{raw_title} | {NAME}"
+    title = raw_title if (path == "/" or NAME in raw_title) else f"{raw_title} | {NAME}"
     if len(title) > 70:
         title = raw_title
     desc = sub_brand(pg["description"])

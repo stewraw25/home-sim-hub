@@ -330,3 +330,4 @@ footer.site a{color:#86efac}
 footer.site a:hover{color:#fff}
 footer.site nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin:12px 0 16px}
 footer.site p{margin:8px 0;line-height:1.55;color:#94a3b8}
+@media(max-width:639px){.hero{padding:28px 0 32px}.hero-art{padding:10px}}

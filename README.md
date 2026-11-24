@@ -1,22 +1,17 @@
-# Home Sim Hub (working name)
+# Home Sim Hub
 
-Static Amazon UK affiliate site about home simulators: golf first, then sim racing. More sections (VR, flight sim) can be added in `sections.json` and `content/pages.py`.
+Static UK guide site for home golf simulator bays, brand comparisons and sim racing rigs.
 
-## Build
-```
-python3 build.py        # writes docs/ (GitHub Pages serves main:/docs)
-python3 check_links.py  # noindex, disclosure, affiliate tag, rel and internal-link checks
-```
+## Rebrand or Go Live (Single Config)
+All brand identity, wordmark, domain and preview-noindex settings live in `config.json`:
+1. Edit `site_name`, `brand_wordmark`, `tagline`, `base_url`, `custom_domain`, and `noindex` in `config.json`.
+2. Regenerate brand SVGs/PNGs (`favicon.svg`, `logo.svg`, `logo.png`, `og.png`):
+   ```bash
+   python3 build_assets.py
+   ```
+3. Build `docs/` and run full SEO/link/compliance checks:
+   ```bash
+   python3 build.py && python3 check_links.py
+   ```
 
-## One config file
-`config.json` holds the site name, `base_url`, `amazon_tag` and `noindex`. Renaming the site or going live is a change there plus a rebuild.
-
-## Go-live (after the domain is bought)
-1. In `config.json`: set `base_url` to `https://<domain>`, `noindex` to `false`, and add `"custom_domain": "<domain>"` (the build then writes `docs/CNAME`).
-2. `python3 build.py && python3 check_links.py`, commit, push.
-3. DNS at Porkbun: apex A records to GitHub Pages (185.199.108.153, .109.153, .110.153, .111.153) and `www` CNAME to `stewraw25.github.io`.
-4. Repo Settings, Pages: set the custom domain and tick Enforce HTTPS.
-5. Add the domain to Google Search Console, submit `sitemap.xml`, then ping IndexNow.
-
-## Rules for content
-No testing or ownership claims, no star ratings or review schema, no invented specs or superlatives. Specs come from the maker or the Amazon listing. Prices show only as "checked on <date>".
+When `noindex` is `false` and `custom_domain` is set, `build.py` removes `noindex` tags, switches `docs/robots.txt` to allow crawling with the sitemap URL, and writes `docs/CNAME`.

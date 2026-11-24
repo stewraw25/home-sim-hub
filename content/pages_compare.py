@@ -21,7 +21,7 @@ COMPARE_PAGE = dict(
     crumbs=[],
     type="article",
     js=True,
-    description="Brand-by-brand UK comparison of golf launch monitors, simulator bays, nets, mats and projectors: Garmin, Rapsodo, SkyTrak, Bushnell, Foresight, Uneekor, FlightScope and Square Golf.",
+    description="Compare 8 golf launch monitor brands (Garmin, Rapsodo, SkyTrak, Bushnell, Uneekor, FlightScope, Square, Shot Scope) plus UK nets, mats and projectors.",
     h1="Compare home simulator brands side by side",
     hero=dict(
         variant="hero-compare",
@@ -44,6 +44,7 @@ COMPARE_PAGE = dict(
     faq=[
         ("Which launch monitor brands need the least room depth?", "Photometric camera units that sit beside the ball — including Garmin Approach R50, SkyTrak ST MAX, Square Golf, Bushnell Launch Pro, Foresight GC3 and Uneekor EYE MINI / EYE MINI LITE — do not need 1.8 to 2.7 m of open floor behind the golfer. You still need safe ball-to-screen distance and full swing clearance."),
         ("Which launch monitor brands have no mandatory subscription?", "Shot Scope LM1 uses the free Shot Scope mobile app with no subscription. Foresight GC3 (sold in the UK at £7,500) includes FSX Play software with no recurring fee. FlightScope Mevo+ includes bundled E6 courses and supports direct GSPro connection without a FlightScope subscription, though third-party sim software licences still apply separately."),
+        ("Which launch monitors work without a gaming PC?", "Shot Scope LM1 has its own 3.5 inch screen and mobile app. Garmin Approach R50 has a built-in 10 inch touchscreen. Garmin R10, Rapsodo MLM2PRO and Uneekor EYE MINI support mobile or iPad apps (Uneekor EYE MINI LITE requires a wired Windows PC)."),
         ("Are Amazon product prices on this page live?", "No. Amazon UK prices shown here were checked on 24 Nov 2026 and change frequently. Always check Amazon UK or the maker's UK store for the current price before buying."),
         ("Do you test these simulator brands hands-on?", "No. We research every figure from makers' manuals, official UK product pages and Amazon UK listings, and we have not tested these products ourselves."),
     ],
@@ -140,6 +141,30 @@ COMPARE_PAGE = dict(
   <td>£2,490 (Launch Pro EU) / £7,500 (GC3 UK)</td>
   <td>https://bushnellgolfeurope.com/product/launch-pro/</td>
 </tr>
+</tbody>
+</table></div>
+
+<h2>PC, screen &amp; ball requirements by brand</h2>
+<div class="tbl"><table>
+<thead><tr>
+  <th>Brand &amp; model</th>
+  <th>Built-in display</th>
+  <th>PC required</th>
+  <th>Special ball / stickers indoors</th>
+  <th>Budget band (UK)</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>Shot Scope LM1</strong></td><td>Yes (3.5" colour)</td><td>No (phone app)</td><td>No special balls needed for ball/club speed</td><td>Under £500</td></tr>
+<tr><td><strong>Garmin Approach R10</strong></td><td>No (LED indicator)</td><td>No (Garmin Golf app)</td><td>Works with standard balls; Titleist RCT option</td><td>Under £500</td></tr>
+<tr><td><strong>Rapsodo MLM2PRO</strong></td><td>No (app device)</td><td>No (mobile/tablet)</td><td>Rapsodo RPT balls for spin metrics</td><td>Under £500</td></tr>
+<tr><td><strong>Square Golf indoor / Omni</strong></td><td>Check listing</td><td>No / Windows &amp; mobile</td><td>Marked balls / club stickers per model</td><td>£500 – £2,000</td></tr>
+<tr><td><strong>SkyTrak ST MAX</strong></td><td>No</td><td>PC / iPad / Mac</td><td>Standard golf balls</td><td>£500 – £2,000</td></tr>
+<tr><td><strong>FlightScope Mevo+</strong></td><td>No</td><td>No (mobile/iPad or PC)</td><td>Metallic dot stickers or Titleist RCT balls for indoor spin</td><td>£500 – £2,000</td></tr>
+<tr><td><strong>Uneekor EYE MINI LITE</strong></td><td>No (LED status)</td><td>Yes (Windows PC + Ethernet)</td><td>Standard balls (club stickers for club data)</td><td>£500 – £2,000</td></tr>
+<tr><td><strong>Uneekor EYE MINI</strong></td><td>Yes (on-unit)</td><td>Optional (iOS VIEW Air or PC)</td><td>Standard balls (club stickers for club data)</td><td>£2,000+</td></tr>
+<tr><td><strong>Bushnell Launch Pro</strong></td><td>Yes (3" x 2" LCD)</td><td>Optional (PC for Premier sim)</td><td>Standard balls (club markers for club data)</td><td>£2,000+</td></tr>
+<tr><td><strong>Garmin Approach R50</strong></td><td>Yes (10" touchscreen)</td><td>No (standalone display)</td><td>Standard balls (club sticker for face-to-path)</td><td>£2,000+</td></tr>
+<tr><td><strong>Foresight GC3</strong></td><td>Yes (on-unit LCD)</td><td>Optional (PC for FSX Play)</td><td>Standard balls (club markers for club data)</td><td>£2,000+</td></tr>
 </tbody>
 </table></div>
 

@@ -34,7 +34,7 @@ PAGES = [
 # ---------------- HOME ----------------
 dict(
     path="/",
-    title="[[SITE_NAME]]: UK Home Golf Bays, Brand Comparisons & Sim Racing Guides",
+    title="[[SITE_NAME]]: UK Home Golf Bays, Brand Hub & Sim Racing",
     short="Home",
     description="UK guides to home golf simulators and sim racing rigs: compare 8 launch monitor brands, check room sizes from makers' manuals, and compare Amazon UK gear.",
     h1="Plan a home golf bay or sim rig that actually fits your room",
@@ -301,7 +301,7 @@ dict(
     short="Launch monitor vs simulator",
     crumbs=GOLF,
     type="article",
-    description="A launch monitor measures your shots; a golf simulator adds a screen, software and an enclosure so you can see the shot and play courses. Here's how they fit together.",
+    description="A launch monitor measures your shots; a golf simulator adds an impact screen, software and an enclosure. See how they differ and what you need in the UK.",
     faq=[
         ("Can I start with a launch monitor and net, then add a screen later?", "Yes. Many golfers start with a launch monitor, hitting mat and practice net using a phone or tablet, then add an impact screen, enclosure and short-throw projector later."),
         ("Do launch monitors include simulator courses?", "Some include trial or bundled driving range features, while full virtual course play often requires an active brand subscription or third-party simulator software."),
@@ -692,7 +692,7 @@ dict(
     path="/contact/",
     title="Contact",
     short="Contact",
-    description="How to contact [[SITE_NAME]].",
+    description="How to contact [[SITE_NAME]] to report an out-of-date UK price, broken link or product update.",
     body='''<p>A contact form is coming soon.</p>
 <p>When it's ready, you'll be able to use it to tell us about an out-of-date price, a broken link or a product listing that has changed.</p>'''),
 
@@ -702,6 +702,6 @@ dict(
     title="Page not found",
     short="Not found",
     disclosure=False,
-    description="This page could not be found.",
+    description="This page could not be found on [[SITE_NAME]]. Browse home golf bays, brand comparisons or sim racing.",
     body='''<p>That page couldn't be found. Try the [[link:/|home page]], [[link:/compare/|compare brands]], [[link:/golf/|home golf]] or [[link:/racing/|sim racing]].</p>'''),
 ]
