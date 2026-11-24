@@ -115,6 +115,7 @@ dict(
 <a class="card tile" href="[[BP]]/golf/garage-golf-simulator/"><div><h3>Setting up a golf simulator in a garage</h3><p>Step-by-step plan for garage ceiling clearance, enclosures, mats and projectors.</p></div><span class="tile-cta">Read guide &rarr;</span></a>
 <a class="card tile" href="[[BP]]/golf/garmin-r50-vs-skytrak-st-max/"><div><h3>Garmin Approach R50 vs SkyTrak ST MAX</h3><p>Two beside-the-ball camera systems compared on price, screen and software.</p></div><span class="tile-cta">Read comparison &rarr;</span></a>
 <a class="card tile" href="[[BP]]/golf/golf-nets-for-the-garden/"><div><h3>Golf nets for the garden</h3><p>Pop-up nets and 3m practice cages compared by listing size.</p></div><span class="tile-cta">Read guide &rarr;</span></a>
+<a class="card tile" href="[[BP]]/golf/golf-simulator-projectors/"><div><h3>Golf simulator projectors</h3><p>BenQ TH671ST, AH700ST and Optoma GT1080HDR throw ratios and lumens compared.</p></div><span class="tile-cta">Read guide &rarr;</span></a>
 </div>'''),
 
 # ---------------- LAUNCH MONITORS HUB ----------------
@@ -210,7 +211,7 @@ dict(
 <h2>Impact screens</h2>
 [[p:simspace-impact-screen]][[p:gosports-impact-screen]]
 <h2>Projectors</h2>
-<p>Check the projector maker's throw distance and mounting guidance against your room before buying.</p>
+<p>Check the projector maker's throw distance and mounting guidance against your room before buying, or see our [[link:/golf/golf-simulator-projectors/|projector throw ratio comparison]].</p>
 [[p:benq-ah700st]][[p:benq-th671st]][[p:optoma-gt1080hdr]]
 <p>Next: [[link:/golf/garage-golf-simulator/|setting up a simulator in a garage]] and the [[link:/golf/room-size-guide/|room size guide]].</p>
 ''' + SRC_GOLF),
@@ -250,6 +251,53 @@ dict(
 [[p:spurk-winter-strike-mat]][[p:costway-hitting-mat]][[p:giraffyco-hitting-mat]]
 <p>More: [[link:/golf/golf-nets-for-the-garden/|golf nets for the garden]].</p>
 ''' + SRC_GOLF),
+
+# ---------------- GUIDE: PROJECTORS ----------------
+dict(
+    path="/golf/golf-simulator-projectors/",
+    title="Golf simulator projectors: throw ratios and brightness (UK)",
+    short="Simulator projectors",
+    crumbs=GOLF,
+    type="article",
+    description="Short-throw golf simulator projectors on Amazon UK compared by official throw ratio, lumens, lamp vs laser light source and placement distance.",
+    itemlist=[
+        ("BenQ TH671ST short-throw projector", "/golf/golf-simulator-projectors/#benq-th671st"),
+        ("Optoma GT1080HDR short-throw projector", "/golf/golf-simulator-projectors/#optoma-gt1080hdr"),
+        ("BenQ AH700ST laser golf projector", "/golf/golf-simulator-projectors/#benq-ah700st"),
+    ],
+    faq=[
+        ("How far from the impact screen does a short-throw projector sit?", "Multiply your screen width by the projector's throw ratio. For a 2.4 m wide image, a 0.69 to 0.83 lens (BenQ TH671ST and AH700ST) sits roughly 1.66 m to 1.99 m from the screen, whereas a 0.49 lens (Optoma GT1080HDR) sits around 1.18 m away."),
+        ("Is 3,000 to 4,000 lumens bright enough for a garage golf simulator?", "BenQ notes 3,000 ANSI lumens on the TH671ST keeps the image visible with room lights on, while the laser AH700ST increases output to 4,000 ANSI lumens."),
+    ],
+    related=[
+        ("/golf/simulators/", "Home simulator bays", "Enclosures, impact screens and full bay parts."),
+        ("/golf/garage-golf-simulator/", "Garage golf simulator guide", "Checking ceiling tracks and screen clearance."),
+        ("/compare/", "Compare all simulator brands", "Compare launch monitors, bays, mats and projectors side by side."),
+    ],
+    body='''<p class="lede">A short-throw projector lets you mount the unit ahead of or just above the hitting area so the golfer does not cast a shadow onto the impact screen. Three 1080p models were listed on Amazon UK when we checked on [[checked]].</p>
+<h2>Throw ratios &amp; screen distances compared</h2>
+<p>To find the approximate throw distance for a 16:9 image, multiply the image width by the maker's throw ratio.</p>
+<div class="tbl"><table><thead><tr><th>Model</th><th>Light source</th><th>Brightness (maker)</th><th>Throw ratio</th><th>Approx. distance for 2.4 m wide screen</th><th>Price checked</th></tr></thead><tbody>
+<tr><td>BenQ TH671ST</td><td>Lamp (up to 15,000 h LampSave)</td><td>3,000 ANSI lm</td><td>0.69 – 0.83 (1.2x zoom)</td><td>1.66 – 1.99 m</td><td>[[price:benq-th671st]]</td></tr>
+<tr><td>Optoma GT1080HDR</td><td>Lamp (up to 15,000 h Eco+)</td><td>3,800 lm</td><td>0.49:1 (fixed)</td><td>~1.18 m</td><td>[[price:optoma-gt1080hdr]]</td></tr>
+<tr><td>BenQ AH700ST</td><td>Laser (20,000 h)</td><td>4,000 ANSI lm</td><td>0.69 – 0.83 (1.2x zoom)</td><td>1.66 – 1.99 m</td><td>[[price:benq-ah700st]]</td></tr>
+</tbody></table></div>
+<p class="small">Throw distances above are calculated from the makers' published throw ratios for a 2.4 m wide 16:9 image. Always verify exact ceiling offset and mount clearance in the maker's manual before drilling.</p>
+<h2>Checked models on Amazon UK</h2>
+[[p:benq-th671st]][[p:optoma-gt1080hdr]][[p:benq-ah700st]]
+<h2>Choosing between zoom and fixed lenses</h2>
+<ul>
+<li><strong>1.2x optical zoom (BenQ TH671ST / AH700ST):</strong> Gives placement flexibility across a 1.66 to 1.99 m range for a 2.4 m wide screen, helpful if ceiling joists sit in a fixed position.</li>
+<li><strong>0.49:1 fixed short-throw (Optoma GT1080HDR):</strong> Sits closer to the screen (~1.18 m for 2.4 m width), keeping it further ahead of a tall golfer's driver swing, with exact positioning set by mount distance.</li>
+<li><strong>Keystone &amp; screen fill:</strong> BenQ's AH700ST adds 2D horizontal/vertical keystone (&plusmn;30&deg;) and Screen Fill presets (16:9, 16:10, 4:3, 1:1) for non-widescreen enclosures.</li>
+</ul>
+<h2>Sources</h2><ul class="sources">
+<li>BenQ AH700ST specifications: https://www.benq.com/en-us/projector/golf/ah700st/spec.html</li>
+<li>BenQ TH671ST specifications &amp; golf projector page: https://www.benq.com/en-us/projector/home-projectors/th671st/spec.html</li>
+<li>Optoma GT1080HDR official specifications: https://www.optomausa.com/product/gt1080hdr</li>
+<li>Amazon UK listings checked on [[checked]].</li>
+</ul>''',
+),
 
 # ---------------- ROOM SIZE GUIDE ----------------
 dict(

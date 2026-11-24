@@ -13,6 +13,8 @@ SRC_COMPARE = '''<h2>Sources</h2><ul class="sources">
 <li>Uneekor UK EYE MINI LITE &amp; EYE MINI specifications: https://uneekor.com/en-gb/products/eye-mini-lite-standalone</li>
 <li>Uneekor EYE MINI LITE manual (PDF): https://download.uneekor.com/docs/EYE_MINI_LITE_Manual.pdf</li>
 <li>FlightScope Mevo and Mevo+ FAQ: https://flightscope.com/pages/faq</li>
+<li>BenQ AH700ST &amp; TH671ST specs: https://www.benq.com/en-us/projector/golf/ah700st/spec.html</li>
+<li>Optoma GT1080HDR specs: https://www.optomausa.com/product/gt1080hdr</li>
 <li>Amazon UK listings checked on [[checked]] (links tagged stewraw25-21).</li>
 </ul>'''
 
@@ -340,12 +342,14 @@ COMPARE_PAGE = dict(
 <h2>Short-throw projector brands</h2>
 <p>Short-throw projectors sit closer to the impact screen so the golfer does not cast a shadow across the image. Verify exact throw distance against your bay depth on each maker's throw calculator.</p>
 <div class="tbl"><table>
-<thead><tr><th>Brand</th><th>Models checked</th><th>Price checked</th><th>Amazon UK</th></tr></thead>
+<thead><tr><th>Brand &amp; model</th><th>Resolution &amp; light</th><th>Brightness</th><th>Throw ratio (maker)</th><th>Price checked</th><th>Amazon UK</th></tr></thead>
 <tbody>
-<tr><td><strong>BenQ</strong></td><td>TH671ST (lamp short-throw) / AH700ST (laser short-throw)</td><td>[[price:benq-th671st]] / [[price:benq-ah700st]]</td><td>[[buy:benq-th671st|TH671ST]] &middot; [[buy:benq-ah700st|AH700ST]]</td></tr>
-<tr><td><strong>Optoma</strong></td><td>GT1080HDR (short-throw)</td><td>[[price:optoma-gt1080hdr]]</td><td>[[buy:optoma-gt1080hdr|Check price]]</td></tr>
+<tr><td><strong>BenQ TH671ST</strong></td><td>1080p Lamp</td><td>3,000 ANSI lm</td><td>0.69–0.83 (1.2x zoom)</td><td>[[price:benq-th671st]]</td><td>[[buy:benq-th671st|TH671ST]]</td></tr>
+<tr><td><strong>Optoma GT1080HDR</strong></td><td>1080p Lamp</td><td>3,800 lm</td><td>0.49:1 (fixed lens)</td><td>[[price:optoma-gt1080hdr]]</td><td>[[buy:optoma-gt1080hdr|GT1080HDR]]</td></tr>
+<tr><td><strong>BenQ AH700ST</strong></td><td>1080p Laser</td><td>4,000 ANSI lm</td><td>0.69–0.83 (1.2x zoom)</td><td>[[price:benq-ah700st]]</td><td>[[buy:benq-ah700st|AH700ST]]</td></tr>
 </tbody>
 </table></div>
+<p>See our dedicated [[link:/golf/golf-simulator-projectors/|golf simulator projector throw guide]] for 2.4 m and 3.0 m screen placement distances.</p>
 </section>
 
 <section data-cat="racing">
