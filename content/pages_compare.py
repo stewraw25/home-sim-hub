@@ -59,9 +59,10 @@ COMPARE_PAGE = dict(
     ],
     body='''<p class="lede">Start by filtering the category you are pricing up. Launch monitor brands differ mostly on where the unit sits (behind the ball vs beside it), whether simulator play needs an annual subscription, and whether you need a gaming PC.</p>
 <h2>Quick brand comparisons</h2>
-<div class="cards two">
+<div class="cards three">
   <a class="card tile" href="[[BP]]/compare/radar-vs-camera-launch-monitors/"><div><span class="card-tag">Deep dive</span><h3>Radar vs camera brands</h3><p>Behind-the-ball depth vs beside-the-ball side clearance, plus dual-handed play.</p></div><span class="tile-cta">Compare placement &rarr;</span></a>
-  <a class="card tile" href="[[BP]]/compare/launch-monitor-subscriptions/"><div><span class="card-tag gold">Running costs</span><h3>Subscriptions &amp; software compared</h3><p>Which brands include free software vs annual fees for courses and GSPro.</p></div><span class="tile-cta">Compare software terms &rarr;</span></a>
+  <a class="card tile" href="[[BP]]/compare/launch-monitor-subscriptions/"><div><span class="card-tag gold">Running costs</span><h3>Subscriptions &amp; software</h3><p>Which brands include free software vs annual fees for courses and GSPro.</p></div><span class="tile-cta">Compare software terms &rarr;</span></a>
+  <a class="card tile" href="[[BP]]/compare/sim-racing-brands/"><div><span class="card-tag slate">Motorsport</span><h3>Sim racing brands</h3><p>Logitech, Thrustmaster, Fanatec, MOZA, Playseat, NLR and GT Omega compared.</p></div><span class="tile-cta">Compare racing brands &rarr;</span></a>
 </div>
 <div class="filter-bar" role="group" aria-label="Filter brand categories" data-filter-group data-target="#brand-sections">
   <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All brands</button>
@@ -448,4 +449,54 @@ SUBSCRIPTIONS_PAGE = dict(
 ''' + SRC_COMPARE,
 )
 
-COMPARE_PAGES = [COMPARE_PAGE, RADAR_VS_CAMERA_PAGE, SUBSCRIPTIONS_PAGE]
+
+SIM_RACING_COMPARE_PAGE = dict(
+    path="/compare/sim-racing-brands/",
+    title="Compare sim racing brands: wheels, pedals & cockpits (UK)",
+    short="Sim racing brands",
+    crumbs=COMP,
+    type="article",
+    description="Compare UK sim racing brands: Logitech G, Thrustmaster, Fanatec, MOZA, Playseat, Next Level Racing and GT Omega wheels, pedals and cockpits.",
+    faq=[
+        ("Which sim racing wheel brands work on PS5 as well as PC?", "Among our checked Amazon UK listings, the Logitech G923 (PS5/PC), Thrustmaster T300 RS GT (PS5/PS4/PC), Logitech G RS50 (PS5/PC) and Fanatec Gran Turismo DD Pro (PC/PS5/PS4) list PlayStation compatibility. The Fanatec CSL DD listing is PC."),
+        ("Which cockpit brands offer foldable storage for smaller UK rooms?", "Playseat offers the Challenge ActiFit (136 x 54 x 96 cm, 9 kg) and Next Level Racing offers the GTLite Pro, both built to fold away between sessions."),
+    ],
+    related=[
+        ("/compare/", "Main brand comparison hub", "Compare golf launch monitors, enclosures, mats, projectors and racing gear."),
+        ("/racing/direct-drive-wheels/", "Wheels and pedals guide", "Full Amazon UK product cards for every checked wheel base and pedal set."),
+        ("/racing/cockpits-and-rigs/", "Cockpits and rigs guide", "Full specs for foldable seats, tubular frames, profile rigs and monitor stands."),
+    ],
+    body='''<p class="lede">Sim racing hardware splits into wheel bases &amp; pedals (Logitech G, Thrustmaster, Fanatec, MOZA) and mounting frames or cockpits (Grefinity, Playseat, Next Level Racing, GT Omega). Every price and platform note below comes from Amazon UK listings checked on [[checked]] and the makers' support pages.</p>
+<h2>Wheel base &amp; pedal brands</h2>
+<div class="tbl"><table>
+<thead><tr><th>Brand</th><th>Checked models</th><th>Drive type (listing)</th><th>Platforms (listing title)</th><th>Price band ([[checked]])</th></tr></thead>
+<tbody>
+<tr><td><strong>Logitech G</strong></td><td>G923 / G RS50 / PRO Racing Pedals</td><td>Geared (G923) &amp; 8Nm direct drive (RS50)</td><td>PS5, PC</td><td>[[price:logitech-g923]] – [[price:logitech-rs50]]</td></tr>
+<tr><td><strong>Thrustmaster</strong></td><td>T300 RS GT</td><td>Wheel &amp; 3-pedal set (belt)</td><td>PS5, PS4, PC</td><td>[[price:thrustmaster-t300-rs-gt]]</td></tr>
+<tr><td><strong>Fanatec</strong></td><td>CSL DD / GT DD Pro / CSL Elite Pedals V2</td><td>Direct drive bases &amp; load-cell pedals</td><td>CSL DD: PC; GT DD Pro: PC, PS5, PS4</td><td>[[price:fanatec-csl-elite-pedals-v2]] – [[price:fanatec-gt-dd-pro]]</td></tr>
+<tr><td><strong>MOZA Racing</strong></td><td>MOZA R5 bundle</td><td>Direct drive base with pedals</td><td>See Amazon UK listing</td><td>[[price:moza-r5-bundle]]</td></tr>
+</tbody>
+</table></div>
+<h2>Cockpit, stand &amp; seat brands</h2>
+<div class="tbl"><table>
+<thead><tr><th>Brand</th><th>Checked models</th><th>Format</th><th>Key maker dimension / note</th><th>Price band ([[checked]])</th></tr></thead>
+<tbody>
+<tr><td><strong>Grefinity</strong></td><td>Height-adjustable wheel stand</td><td>Wheel stand (no seat)</td><td>57.4 x 48 x 80 cm; 10.1 kg</td><td>[[price:grefinity-wheel-stand]]</td></tr>
+<tr><td><strong>Playseat</strong></td><td>Challenge ActiFit / Trophy Logitech G</td><td>Foldable seat &amp; full cockpit</td><td>Challenge: 136 x 54 x 96 cm; 9 kg</td><td>[[price:playseat-challenge]] – [[price:playseat-trophy]]</td></tr>
+<tr><td><strong>Next Level Racing</strong></td><td>GTLite Pro / F-GT / Monitor stands</td><td>Foldable, dual-position &amp; monitor stands</td><td>F-GT GT: 140 x 60 x 125 cm; Formula: 170 x 60 x 100 cm (130 kg max)</td><td>[[price:nlr-f-gt-monitor-stand]] – [[price:nlr-f-gt]]</td></tr>
+<tr><td><strong>GT Omega</strong></td><td>PRIME Lite frame / INERTIA bucket seat</td><td>Aluminium profile frame (no seat) + seat</td><td>Frame and seat sold separately</td><td>[[price:gt-omega-inertia-seat]] – [[price:gt-omega-prime-lite]]</td></tr>
+</tbody>
+</table></div>
+<h2>Before you mix brands</h2>
+<ul>
+<li>Confirm console compatibility before buying: PlayStation licensing sits inside the wheel base, while PC setups can mix USB pedal sets across brands.</li>
+<li>If choosing a direct drive wheel base, check the cockpit maker's mounting template and torque guidance first.</li>
+</ul>
+<h2>Sources</h2><ul class="sources">
+<li>Playseat Challenge ActiFit FAQ: https://www.playseat.com/en-us/pages/faq-challenge-actifit</li>
+<li>Next Level Racing F-GT support page: https://support.nextlevelracing.com/hc/en-us/articles/13018208861199-Next-Level-Racing-F-GT-Cockpit-NLR-S010</li>
+<li>Amazon UK listings checked on [[checked]] (links tagged stewraw25-21).</li>
+</ul>''',
+)
+
+COMPARE_PAGES = [COMPARE_PAGE, RADAR_VS_CAMERA_PAGE, SUBSCRIPTIONS_PAGE, SIM_RACING_COMPARE_PAGE]
