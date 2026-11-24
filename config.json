@@ -1,7 +1,9 @@
 {
   "site_name": "Home Sim Hub",
-  "tagline": "UK guides to setting up a home golf bay and a sim racing rig",
+  "brand_wordmark": ["Home", "Sim Hub"],
+  "tagline": "UK guides to home golf bays, launch monitor brands and sim racing rigs",
   "base_url": "https://stewraw25.github.io/home-sim-hub",
+  "custom_domain": "",
   "amazon_tag": "stewraw25-21",
   "noindex": true,
   "price_checked": "24 Nov 2026",

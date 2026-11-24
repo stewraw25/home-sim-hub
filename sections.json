@@ -1,5 +1,6 @@
 [
   {"id": "golf", "name": "Home golf", "path": "/golf/", "live": true, "blurb": "Launch monitors, home bays, nets, mats and room sizes."},
+  {"id": "compare", "name": "Compare brands", "path": "/compare/", "live": true, "highlight": true, "blurb": "Side-by-side brand comparison of launch monitors, nets, mats and projectors."},
   {"id": "racing", "name": "Sim racing", "path": "/racing/", "live": true, "blurb": "Wheels, pedals, cockpits, seats and monitor stands."},
   {"id": "vr", "name": "VR", "path": "/vr/", "live": false, "blurb": "Planned section."},
   {"id": "flight", "name": "Flight sim", "path": "/flight/", "live": false, "blurb": "Planned section."}
