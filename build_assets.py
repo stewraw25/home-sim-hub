@@ -91,3 +91,12 @@ og_html = f'''<!DOCTYPE html><html><body style="margin:0;width:1200px;height:630
 </body></html>'''
 chrome_render(og_html, os.path.join(STATIC, "og.png"), 1200, 630)
 print("Generated static/favicon.svg, static/logo.svg, static/logo.png, static/og.png")
+
+import shutil
+if shutil.which("ffmpeg"):
+    for png in ("logo.png", "og.png"):
+        p = os.path.join(STATIC, png)
+        tmp = p + ".opt.png"
+        subprocess.run(["ffmpeg", "-y", "-i", p, "-compression_level", "9", "-pred", "mixed", tmp, "-loglevel", "error"], check=True)
+        os.replace(tmp, p)
+    print("Losslessly optimized logo.png and og.png via ffmpeg")
