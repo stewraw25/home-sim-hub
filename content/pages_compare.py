@@ -20,6 +20,7 @@ SRC_COMPARE = '''<h2>Sources</h2><ul class="sources">
 
 COMPARE_PAGE = dict(
     path="/compare/",
+    direct_answer=("How do home golf launch monitor brands differ?", "Behind-the-ball radar units (Shot Scope LM1 £179.00, Garmin R10 £377.39, Rapsodo MLM2PRO £399.00, FlightScope Mevo+ £1,759) sit 1.4 to 2.7 m behind the tee and suit deeper garages or dual-handed play. Beside-the-ball camera units (Square Golf £649–£1,599.99, SkyTrak ST MAX £1,699.00, Uneekor EYE MINI LITE £1,699–£1,999, Bushnell Launch Pro £2,490, Garmin R50 £4,299.00) save roughly 2 m of room depth."),
     title="Compare Golf Simulator & Launch Monitor Brands (UK)",
     short="Compare brands",
     crumbs=[],
@@ -376,6 +377,7 @@ COMPARE_PAGE = dict(
 
 RADAR_VS_CAMERA_PAGE = dict(
     path="/compare/radar-vs-camera-launch-monitors/",
+    direct_answer=("Should you pick a radar or camera launch monitor for a UK room?", "Pick a beside-the-ball camera unit if your room is under 4.3 m deep, because it sits ~0.4 to 0.5 m beside the tee. Pick a behind-the-ball radar unit if you have 4.3 to 4.9 m+ of indoor depth or share the bay between left- and right-handed golfers without moving the monitor."),
     title="Radar vs camera golf launch monitors compared (UK)",
     short="Radar vs camera",
     crumbs=COMP,
@@ -411,6 +413,7 @@ RADAR_VS_CAMERA_PAGE = dict(
 
 SUBSCRIPTIONS_PAGE = dict(
     path="/compare/launch-monitor-subscriptions/",
+    direct_answer=("Which golf launch monitors have no mandatory subscription?", "Shot Scope LM1 (£179.00) includes its mobile app free for life, FlightScope Mevo+ (£1,759) bundles E6 courses with direct GSPro support and no FlightScope fee, and Foresight GC3 (£7,500) includes FSX Play outright. Garmin, Rapsodo, SkyTrak, Uneekor and Bushnell Launch Pro require paid memberships for full course simulation or third-party links."),
     title="Golf launch monitor subscriptions & software compared (UK)",
     short="Subscriptions compared",
     crumbs=COMP,
@@ -452,6 +455,7 @@ SUBSCRIPTIONS_PAGE = dict(
 
 SIM_RACING_COMPARE_PAGE = dict(
     path="/compare/sim-racing-brands/",
+    direct_answer=("Which sim racing brand fits PS5 vs PC and small UK rooms?", "Logitech G923 (£199.99), Thrustmaster T300 RS GT (£299.99), Logitech G RS50 (£499.99) and Fanatec GT DD Pro (£504.95) list PlayStation and PC support, while Fanatec CSL DD (£264.99) is PC-only. For small rooms, Playseat Challenge ActiFit folds to 136 x 54 x 96 cm (9 kg)."),
     title="Compare sim racing brands: wheels, pedals & cockpits (UK)",
     short="Sim racing brands",
     crumbs=COMP,
@@ -502,6 +506,7 @@ SIM_RACING_COMPARE_PAGE = dict(
 
 NETS_MATS_COMPARE_PAGE = dict(
     path="/compare/nets-and-mats-brands/",
+    direct_answer=("What net and hitting mat sizes are listed on Amazon UK?", "Practice nets range from 7 ft x 7 ft (FORZA £59.49) and 2.44 x 2.44 m (Amazon Basics £46.74) up to 2.5 x 2.5 x 3.84 m (SimSpace £219.10) and 3 x 3 m steel cages (Hillman PGM £251.99), while full-stance hitting mats such as GIRAFFYCO measure 1.5 x 1.2 m (£122.99)."),
     title="Golf net, enclosure and hitting mat brands compared (UK)",
     short="Nets & mats brands",
     crumbs=COMP,

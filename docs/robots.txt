@@ -1,3 +1,4 @@
-# Preview build: keep search engines out until the real domain is live.
+# Preview build: keep search and AI crawlers out until the real domain is live.
+# At go-live (noindex=false), GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended and Bingbot are explicitly allowed.
 User-agent: *
 Disallow: /

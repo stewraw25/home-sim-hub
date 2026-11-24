@@ -132,6 +132,7 @@ dict(
 # ---------------- LAUNCH MONITORS HUB ----------------
 dict(
     path="/golf/launch-monitors/",
+    direct_answer=("What launch monitors are listed on Amazon UK?", "Checked Amazon UK models run from £179.00 (Shot Scope LM1) and £377.39–£399.00 (Garmin Approach R10, Rapsodo MLM2PRO) up to £649.00–£1,699.00 (Square Golf, SkyTrak ST MAX) and £4,299.00 (Garmin Approach R50 with built-in 10 inch touchscreen)."),
     title="Golf launch monitors on Amazon UK",
     short="Launch monitors",
     crumbs=GOLF,
@@ -183,6 +184,7 @@ dict(
 # ---------------- SIMULATOR HUB ----------------
 dict(
     path="/golf/simulators/",
+    direct_answer=("What components go into a home golf simulator bay?", "A complete bay combines 6 parts: a launch monitor, an impact screen, a padded enclosure with side netting, a hitting mat, a short-throw projector, and simulator software."),
     faq=[
         ("Do I need a short-throw projector for a home golf bay?", "Short-throw projectors such as the BenQ AH700ST, BenQ TH671ST and Optoma GT1080HDR mount closer to the impact screen so your body does not cast a shadow over the image."),
         ("How much space should be left behind an impact screen or net?", "Leave at least 30 cm (and always follow the screen or enclosure maker's stated clearance) so the stretched screen does not strike the wall behind it."),
@@ -230,6 +232,7 @@ dict(
 # ---------------- NETS AND MATS HUB ----------------
 dict(
     path="/golf/nets-and-mats/",
+    direct_answer=("What do you need for simple net-and-mat home golf practice?", "Pair a 2.1 m to 3 m practice net or steel cage (such as FORZA, Amazon Basics, SimSpace or Hillman PGM) with a protective hitting mat and leave the net maker's recommended clearance behind the fabric."),
     faq=[
         ("Where should a radar launch monitor sit relative to a hitting mat?", "Garmin's Approach R10 manual notes that the bottom edge of the launch monitor should sit above the top surface of the hitting mat."),
         ("Do I need a hitting mat if I use a golf net in the garden?", "Yes. A hitting mat protects your lawn from divots and gives a level, repeatable surface for launch monitor shots."),
@@ -266,6 +269,7 @@ dict(
 # ---------------- GUIDE: PROJECTORS ----------------
 dict(
     path="/golf/golf-simulator-projectors/",
+    direct_answer=("Which short-throw projector throw ratios fit a UK bay?", "For a 2.4 m wide 16:9 impact screen, the BenQ TH671ST (£749.00, 3,000 lm) and laser BenQ AH700ST (£1,749.00, 4,000 lm) mount roughly 1.66 to 1.99 m away (0.69–0.83 throw ratio), while the Optoma GT1080HDR (£795.99, 3,800 lm) mounts around 1.18 m away (0.49:1 fixed)."),
     title="Golf simulator projectors: throw ratios and brightness (UK)",
     short="Simulator projectors",
     crumbs=GOLF,
@@ -313,6 +317,7 @@ dict(
 # ---------------- ROOM SIZE GUIDE ----------------
 dict(
     path="/golf/room-size-guide/",
+    direct_answer=("How much space does a UK home golf simulator need?", "Makers cite 2.74 m to 3.05 m+ (9 to 10 ft+) ceiling height measured from the top of the hitting mat, 3.05 to 3.7 m (10 to 12 ft) width, and either ~3.7 m+ depth for beside-the-ball camera units or 4.3 to 4.9 m+ (14 to 16 ft+) depth for behind-the-ball radar units."),
     howto=dict(
         name="How to check if a golf simulator fits your UK room",
         steps=[
@@ -390,6 +395,7 @@ dict(
 # ---------------- LM vs SIM ----------------
 dict(
     path="/golf/launch-monitor-vs-simulator/",
+    direct_answer=("What is the difference between a launch monitor and a golf simulator?", "A launch monitor measures shot data such as ball speed, launch angle and carry on its own screen or mobile app. A full simulator adds an impact screen, padded enclosure, hitting mat, short-throw projector and course software."),
     title="Launch monitor vs golf simulator: what's the difference?",
     short="Launch monitor vs simulator",
     crumbs=GOLF,
@@ -421,6 +427,7 @@ dict(
 # ---------------- GUIDE: UNDER 1000 ----------------
 dict(
     path="/golf/launch-monitors-under-1000/",
+    direct_answer=("Which golf launch monitors under £1,000 were listed on Amazon UK?", "Four models were under £1,000 when checked on [[checked]]: Shot Scope LM1 (£179.00), Garmin Approach R10 (£377.39), Rapsodo MLM2PRO (£399.00) and Square Golf indoor (£649.00)."),
     faq=[
         ("Which launch monitor under £1,000 has no subscription?", "Shot Scope LM1 uses the free Shot Scope mobile app with no subscription and includes a 3.5 inch colour screen on the unit."),
         ("Which under-£1,000 unit saves the most room depth?", "The Square Golf indoor unit is a camera launch monitor rather than a behind-the-ball radar unit, though you should verify its exact set-up guide before ordering."),
@@ -462,6 +469,7 @@ dict(
 # ---------------- GUIDE: GARAGE ----------------
 dict(
     path="/golf/garage-golf-simulator/",
+    direct_answer=("What checks come first for a UK garage golf simulator?", "Measure the lowest overhead obstruction — usually a garage door track, opener or beam — from the top of your hitting mat, leave at least 30 cm+ behind the screen, and pick a beside-the-ball camera monitor if total depth is under 4.3 m."),
     howto=dict(
         name="How to set up a golf simulator in a UK garage",
         steps=[
@@ -510,6 +518,7 @@ dict(
 # ---------------- GUIDE: R50 vs ST MAX ----------------
 dict(
     path="/golf/garmin-r50-vs-skytrak-st-max/",
+    direct_answer=("How do the Garmin Approach R50 and SkyTrak ST MAX differ?", "Both sit beside the ball to save room depth. The Garmin R50 (£4,299.00) includes a built-in 10 inch touchscreen and 3-camera tracking, while the SkyTrak ST MAX (£1,699.00) costs less than half as much and includes 1 year of software in its Amazon UK listing."),
     faq=[
         ("Do you need a separate PC or tablet for the Garmin Approach R50?", "The Amazon UK listing notes the Garmin Approach R50 includes a built-in 10 inch colour touchscreen display, though virtual course rounds still require an active Garmin Golf membership."),
         ("What software is included with the SkyTrak ST MAX?", "The Amazon UK listing checked on 24 Nov 2026 states 1 year of software is included with the SkyTrak ST MAX."),
@@ -547,6 +556,7 @@ dict(
 # ---------------- GUIDE: GARDEN NETS ----------------
 dict(
     path="/golf/golf-nets-for-the-garden/",
+    direct_answer=("What garden golf net sizes are available on Amazon UK?", "Checked options span 7 ft x 7 ft pop-up nets (FORZA £59.49) and 2.44 x 2.44 m portable nets (Amazon Basics £46.74) up to 2.5 x 2.5 x 3.84 m frames (SimSpace £219.10) and 3 x 3 m steel cages (Hillman PGM £251.99)."),
     faq=[
         ("How wide should a garden golf net be for full swings?", "Checked Amazon UK listings range from 7 ft x 7 ft (FORZA pop-up) and 2.44 m x 2.44 m (Amazon Basics) up to 2.5 m x 2.5 m x 3.84 m (SimSpace) and 3 m x 3 m (Hillman PGM cage)."),
         ("Can a pop-up garden net stay outside all year?", "Check each maker's listing: lighter pop-up nets are typically designed to pack away between sessions, whereas heavier steel-framed cages are built for semi-permanent garden use."),
@@ -623,6 +633,7 @@ dict(
 # ---------------- RACING ROOM GUIDE ----------------
 dict(
     path="/racing/room-and-setup-guide/",
+    direct_answer=("How much floor space does a home sim racing setup need?", "A wheel stand takes roughly 57 x 48 cm, a folding Playseat Challenge ActiFit unfolds to 136 x 54 cm (9 kg), and a dual-position Next Level Racing F-GT cockpit measures 140 x 60 cm in GT mode or 170 x 60 cm in Formula mode."),
     title="Sim racing room and set-up guide: how much space you need",
     short="Room and set-up guide",
     crumbs=RACE,
@@ -674,6 +685,7 @@ dict(
 # ---------------- RACING: WHEELS ----------------
 dict(
     path="/racing/direct-drive-wheels/",
+    direct_answer=("Which sim racing wheels and direct drive bases are listed on Amazon UK?", "Checked Amazon UK listings run from geared and belt kits (Logitech G923 £199.99, Thrustmaster T300 RS GT £299.99) up to direct drive bases (Fanatec CSL DD £264.99 PC-only, MOZA R5 bundle £359.00, Logitech G RS50 £499.99, Fanatec GT DD Pro £504.95)."),
     faq=[
         ("What is the difference between geared and direct drive sim racing wheels?", "In a direct drive base such as the Fanatec CSL DD, MOZA R5 or Logitech G RS50, the wheel rim mounts directly to the motor shaft. Entry kits like the Logitech G923 drive the rim through internal gears."),
         ("Do direct drive wheel bases work on PS5 as well as PC?", "Only console-licensed models such as the Fanatec Gran Turismo DD Pro and Logitech G RS50 list PS5/PS4 compatibility; PC-only bases like the Fanatec CSL DD (PC) do not."),
@@ -722,6 +734,7 @@ dict(
 # ---------------- RACING: COCKPITS ----------------
 dict(
     path="/racing/cockpits-and-rigs/",
+    direct_answer=("What sim racing cockpits and stands were checked on Amazon UK?", "Options range from the Grefinity wheel stand (£49.99, no seat) and foldable Playseat Challenge ActiFit (£141.55) / NLR GTLite Pro (£278.98) up to rigid cockpits like the Playseat Trophy (£370.99), NLR F-GT (£395.00) and GT Omega PRIME Lite (£359.90, frame only)."),
     faq=[
         ("Which sim racing cockpits come without a seat?", "Frames such as the GT Omega PRIME Lite and wheel stands like the Grefinity stand are sold without a seat, so you either use your own chair or add a separate bucket seat."),
         ("Can a foldable cockpit store away after racing?", "Yes. Both the Playseat Challenge ActiFit and Next Level Racing GTLite Pro are designed to fold between sessions."),

@@ -20,10 +20,13 @@ with tempfile.TemporaryDirectory() as tmp:
     subprocess.run(["python3", "build.py"], cwd=dst, check=True)
     subprocess.run(["python3", "check_links.py"], cwd=dst, check=True)
 
-    for rel in ("docs/index.html", "docs/compare/index.html", "docs/about/index.html", "docs/logo.svg"):
+    for rel in ("docs/index.html", "docs/compare/index.html", "docs/about/index.html", "docs/logo.svg", "docs/llms.txt"):
         txt = open(os.path.join(dst, rel)).read()
         assert old_name not in txt, f"Found old brand {old_name!r} in {rel}"
         assert "Test Golf" in txt, f"Missing new brand in {rel}"
-    assert "Allow: /" in open(os.path.join(dst, "docs/robots.txt")).read()
+    robots_txt = open(os.path.join(dst, "docs/robots.txt")).read()
+    assert "Allow: /" in robots_txt
+    for bot in ("GPTBot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot", "Google-Extended", "Bingbot"):
+        assert f"User-agent: {bot}" in robots_txt, f"Missing {bot} in go-live robots.txt"
     assert open(os.path.join(dst, "docs/CNAME")).read().strip() == "example.co.uk"
 print("REBRAND & GO-LIVE TEST PASSED")

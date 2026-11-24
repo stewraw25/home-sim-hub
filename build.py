@@ -271,7 +271,7 @@ def layout(pg, body):
     crumb_html = ""
     ld = [
         {"@context": "https://schema.org", "@type": "Organization", "name": NAME, "url": full("/"), "logo": full("/logo.png")},
-        {"@context": "https://schema.org", "@type": "WebSite", "name": NAME, "url": full("/"), "inLanguage": "en-GB"},
+        {"@context": "https://schema.org", "@type": "WebSite", "name": NAME, "url": full("/"), "inLanguage": "en-GB", "dateModified": CFG["updated"]},
     ]
     if path != "/":
         items = [("Home", "/")] + crumbs + [(sub_brand(pg.get("short", raw_title)), path)]
@@ -363,10 +363,19 @@ def layout(pg, body):
     has_links = "amazon.co.uk/dp/" in body or pg.get("disclosure", True)
     disc = f'<div class="disc-bar"><div class="wrap">{DISC_SHORT.format(name=esc(NAME), dl=u("/affiliate-disclosure/"))}</div></div>' if has_links else ""
     dated = (
-        f'<p class="meta">Updated {CFG["updated"]}. Researched from makers\' published documents and Amazon UK listings. We have not tested these products.</p>'
-        if pg.get("type") == "article"
+        f'<p class="meta">Last updated <time datetime="{CFG["updated"]}">{CFG["price_checked"]}</time>. Researched from makers\' published documents and Amazon UK listings. We have not tested these products.</p>'
+        if path != "/404.html"
         else ""
     )
+    da_html = ""
+    if pg.get("direct_answer"):
+        dq, da_body = pg["direct_answer"]
+        da_html = (
+            f'<section class="aeo-answer" aria-label="Quick answer">'
+            f'<span class="aeo-label">Quick answer</span>'
+            f'<h2>{esc(sub_brand(dq))}</h2>'
+            f'<p>{render(da_body)}</p></section>'
+        )
     hero_html = ""
     h1_block = f"<h1>{esc(h1_text)}</h1>"
     if pg.get("hero"):
@@ -423,7 +432,7 @@ def layout(pg, body):
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site"><div class="wrap"><a class="logo" href="{u("/")}">{LOGO_ICON}<span>{wordmark_html}</span></a><nav class="main" aria-label="Main">{nav}</nav></div></header>
 {disc}{hero_html}
-<main id="main-content"><div class="wrap">{crumb_html}<article>{h1_block}{dated}{body}{faq_html}{rel_html}</article></div></main>
+<main id="main-content"><div class="wrap">{crumb_html}<article>{h1_block}{dated}{da_html}{body}{faq_html}{rel_html}</article></div></main>
 <footer class="site"><div class="wrap"><strong>{esc(NAME)}</strong> &middot; {esc(sub_brand(CFG["tagline"]))}<nav aria-label="Footer">{foot_nav}</nav>
 <p>As an Amazon Associate, {esc(NAME)} earns from qualifying purchases. Prices and availability were checked on {CFG["price_checked"]} and can change at any time; the price on Amazon at the time of purchase applies. We research products from makers' published documents and Amazon UK listings and have not tested them ourselves.</p>
 <p>Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p></div></footer>
@@ -439,7 +448,9 @@ def main():
     urls = []
     for pg in PAGES:
         body = render(pg["body"])
-        faq_text = " ".join(q + " " + a for q, a in pg.get("faq", []))
+        da = pg.get("direct_answer")
+        da_text = (da[0] + " " + da[1]) if da else ""
+        faq_text = " ".join(q + " " + a for q, a in pg.get("faq", [])) + " " + da_text
         raw_check = sub_brand(
             re.sub(r"\[\[[^\]]*\]\]|<[^>]+>", " ", pg["body"])
             + " " + pg["title"]
@@ -464,10 +475,34 @@ def main():
     sm.append("</urlset>")
     open(os.path.join(OUT, "sitemap.xml"), "w").write("\n".join(sm) + "\n")
     if CFG["noindex"]:
-        robots = "# Preview build: keep search engines out until the real domain is live.\nUser-agent: *\nDisallow: /\n"
+        robots = (
+            "# Preview build: keep search and AI crawlers out until the real domain is live.\n"
+            "# At go-live (noindex=false), GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended and Bingbot are explicitly allowed.\n"
+            "User-agent: *\nDisallow: /\n"
+        )
     else:
-        robots = f"User-agent: *\nAllow: /\n\nSitemap: {full('/sitemap.xml')}\n"
+        ai_bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot", "Google-Extended", "Bingbot"]
+        bot_rules = "\n".join(f"User-agent: {b}\nAllow: /\n" for b in ai_bots)
+        robots = f"{bot_rules}\nUser-agent: *\nAllow: /\n\nSitemap: {full('/sitemap.xml')}\n"
     open(os.path.join(OUT, "robots.txt"), "w").write(robots)
+
+    llms_lines = [
+        f"# {NAME}",
+        f"> {sub_brand(CFG['tagline'])}. Last updated {CFG['updated']}.",
+        "",
+        f"{NAME} publishes factual UK buying and room-sizing guides for home golf simulator bays and sim racing rigs. "
+        f"Every measurement and specification is cited from manufacturers' manuals, official UK product pages, and Amazon UK listings checked on {CFG['price_checked']}. "
+        "We do not test products hands-on and do not publish star ratings or review scores.",
+        "",
+        "## Key Pages",
+    ]
+    for pg in PAGES:
+        if pg["path"] == "/404.html":
+            continue
+        p_title = sub_brand(pg["title"])
+        p_desc = sub_brand(pg["description"])
+        llms_lines.append(f"- [{p_title}]({full(pg['path'])}): {p_desc}")
+    open(os.path.join(OUT, "llms.txt"), "w").write("\n".join(llms_lines) + "\n")
     if CFG.get("custom_domain") and not CFG["noindex"]:
         open(os.path.join(OUT, "CNAME"), "w").write(CFG["custom_domain"] + "\n")
     print(f"Built {len(urls)} pages into docs/ (noindex={CFG['noindex']}, base={BASE_URL}, name={NAME})")
