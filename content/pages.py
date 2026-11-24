@@ -171,6 +171,10 @@ dict(
 # ---------------- SIMULATOR HUB ----------------
 dict(
     path="/golf/simulators/",
+    faq=[
+        ("Do I need a short-throw projector for a home golf bay?", "Short-throw projectors such as the BenQ AH700ST, BenQ TH671ST and Optoma GT1080HDR mount closer to the impact screen so your body does not cast a shadow over the image."),
+        ("How much space should be left behind an impact screen or net?", "Leave at least 30 cm (and always follow the screen or enclosure maker's stated clearance) so the stretched screen does not strike the wall behind it."),
+    ],
     title="Home golf simulator bays: enclosures, screens and projectors",
     short="Simulator bays",
     crumbs=GOLF,
@@ -214,6 +218,10 @@ dict(
 # ---------------- NETS AND MATS HUB ----------------
 dict(
     path="/golf/nets-and-mats/",
+    faq=[
+        ("Where should a radar launch monitor sit relative to a hitting mat?", "Garmin's Approach R10 manual notes that the bottom edge of the launch monitor should sit above the top surface of the hitting mat."),
+        ("Do I need a hitting mat if I use a golf net in the garden?", "Yes. A hitting mat protects your lawn from divots and gives a level, repeatable surface for launch monitor shots."),
+    ],
     title="Golf nets, practice cages and hitting mats (UK)",
     short="Nets and mats",
     crumbs=GOLF,
@@ -250,6 +258,7 @@ dict(
     short="Room size guide",
     crumbs=GOLF,
     type="article",
+    js=True,
     description="Ceiling height, width and depth for a home golf simulator, using Garmin, Rapsodo and SkyTrak published figures, converted to metres for UK rooms.",
     faq=[
         ("What ceiling height do you need for an indoor golf simulator?", "SkyTrak says a 10 ft (3.05 m) ceiling typically offers ample clearance and many golfers manage with 9 ft (2.74 m). Rapsodo says 9 ft may suit golfers around 5 ft 8 in and under, while taller players may need 10 or 11 ft. Measure from the top of your hitting mat to the lowest overhead obstruction."),
@@ -263,6 +272,22 @@ dict(
     ],
     body='''<p class="lede">Three measurements decide whether a golf simulator fits: ceiling height, room width and room depth. Each launch monitor maker publishes its own figures, so start with the one you're considering.</p>
 <div class="callout">The quickest check, which SkyTrak suggests: stand where you'd hit, take a slow practice swing with your driver, and see whether you clear the ceiling, walls and lights.</div>
+<div class="room-tool" id="room-checker">
+<h3>Check your room against makers' published figures</h3>
+<p class="small">Enter your room dimensions in metres (measured from the top of the hitting mat to the lowest beam or door track) or pick a UK preset:</p>
+<div class="preset-row">
+  <button type="button" class="preset-btn" data-room-preset="2.40,2.80,5.00">UK single garage (2.4 × 2.8 × 5.0 m)</button>
+  <button type="button" class="preset-btn" data-room-preset="2.80,5.00,5.40">Double garage (2.8 × 5.0 × 5.4 m)</button>
+  <button type="button" class="preset-btn" data-room-preset="2.40,3.20,3.80">Spare room (2.4 × 3.2 × 3.8 m)</button>
+  <button type="button" class="preset-btn" data-room-preset="3.10,3.80,5.20">Garden cabin / studio (3.1 × 3.8 × 5.2 m)</button>
+</div>
+<div class="room-inputs">
+  <div class="room-field"><label for="rm-h">Ceiling height (m)</label><input id="rm-h" type="number" step="0.05" min="1.5" max="6" value="2.80"></div>
+  <div class="room-field"><label for="rm-w">Room width (m)</label><input id="rm-w" type="number" step="0.1" min="1.5" max="10" value="3.50"></div>
+  <div class="room-field"><label for="rm-d">Room depth (m)</label><input id="rm-d" type="number" step="0.1" min="1.5" max="12" value="4.90"></div>
+</div>
+<div class="room-results" id="room-fit-results"><p class="small">Enable JavaScript to compare your measurements live against the table below.</p></div>
+</div>
 [[svg:radar-vs-camera]]
 <h2>Makers' published figures</h2>
 <div class="tbl"><table><thead><tr><th>Launch monitor</th><th>Where it sits</th><th>Ball to net or screen</th><th>Other figures</th></tr></thead><tbody>
@@ -328,6 +353,10 @@ dict(
 # ---------------- GUIDE: UNDER 1000 ----------------
 dict(
     path="/golf/launch-monitors-under-1000/",
+    faq=[
+        ("Which launch monitor under £1,000 has no subscription?", "Shot Scope LM1 uses the free Shot Scope mobile app with no subscription and includes a 3.5 inch colour screen on the unit."),
+        ("Which under-£1,000 unit saves the most room depth?", "The Square Golf indoor unit is a camera launch monitor rather than a behind-the-ball radar unit, though you should verify its exact set-up guide before ordering."),
+    ],
     title="Golf launch monitors under £1,000 on Amazon UK",
     short="Under £1,000",
     crumbs=GOLF,
@@ -404,6 +433,10 @@ dict(
 # ---------------- GUIDE: R50 vs ST MAX ----------------
 dict(
     path="/golf/garmin-r50-vs-skytrak-st-max/",
+    faq=[
+        ("Do you need a separate PC or tablet for the Garmin Approach R50?", "The Amazon UK listing notes the Garmin Approach R50 includes a built-in 10 inch colour touchscreen display, though virtual course rounds still require an active Garmin Golf membership."),
+        ("What software is included with the SkyTrak ST MAX?", "The Amazon UK listing checked on 24 Nov 2026 states 1 year of software is included with the SkyTrak ST MAX."),
+    ],
     title="Garmin Approach R50 vs SkyTrak ST MAX",
     short="R50 vs ST MAX",
     crumbs=GOLF,
@@ -436,6 +469,10 @@ dict(
 # ---------------- GUIDE: GARDEN NETS ----------------
 dict(
     path="/golf/golf-nets-for-the-garden/",
+    faq=[
+        ("How wide should a garden golf net be for full swings?", "Checked Amazon UK listings range from 7 ft x 7 ft (FORZA pop-up) and 2.44 m x 2.44 m (Amazon Basics) up to 2.5 m x 2.5 m x 3.84 m (SimSpace) and 3 m x 3 m (Hillman PGM cage)."),
+        ("Can a pop-up garden net stay outside all year?", "Check each maker's listing: lighter pop-up nets are typically designed to pack away between sessions, whereas heavier steel-framed cages are built for semi-permanent garden use."),
+    ],
     title="Golf nets for the garden: sizes and options on Amazon UK",
     short="Garden golf nets",
     crumbs=GOLF,
@@ -557,6 +594,10 @@ dict(
 # ---------------- RACING: WHEELS ----------------
 dict(
     path="/racing/direct-drive-wheels/",
+    faq=[
+        ("What is the difference between geared and direct drive sim racing wheels?", "In a direct drive base such as the Fanatec CSL DD, MOZA R5 or Logitech G RS50, the wheel rim mounts directly to the motor shaft. Entry kits like the Logitech G923 drive the rim through internal gears."),
+        ("Do direct drive wheel bases work on PS5 as well as PC?", "Only console-licensed models such as the Fanatec Gran Turismo DD Pro and Logitech G RS50 list PS5/PS4 compatibility; PC-only bases like the Fanatec CSL DD (PC) do not."),
+    ],
     title="Direct drive and geared sim racing wheels on Amazon UK",
     short="Wheels and pedals",
     crumbs=RACE,
@@ -601,6 +642,10 @@ dict(
 # ---------------- RACING: COCKPITS ----------------
 dict(
     path="/racing/cockpits-and-rigs/",
+    faq=[
+        ("Which sim racing cockpits come without a seat?", "Frames such as the GT Omega PRIME Lite and wheel stands like the Grefinity stand are sold without a seat, so you either use your own chair or add a separate bucket seat."),
+        ("Can a foldable cockpit store away after racing?", "Yes. Both the Playseat Challenge ActiFit and Next Level Racing GTLite Pro are designed to fold between sessions."),
+    ],
     title="Sim racing cockpits, rigs, seats and monitor stands on Amazon UK",
     short="Cockpits and rigs",
     crumbs=RACE,

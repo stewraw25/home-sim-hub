@@ -331,3 +331,31 @@ footer.site a:hover{color:#fff}
 footer.site nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin:12px 0 16px}
 footer.site p{margin:8px 0;line-height:1.55;color:#94a3b8}
 @media(max-width:639px){.hero{padding:28px 0 32px}.hero-art{padding:10px}}
+
+/* Room Fit Checker Widget */
+.room-tool{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;margin:20px 0;box-shadow:var(--shadow);
+}
+.room-tool h3{margin:0 0 6px}
+.preset-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
+.preset-btn{
+  appearance:none;cursor:pointer;background:var(--surface-alt);border:1px solid var(--line);
+  color:var(--fg);padding:6px 12px;border-radius:999px;font:600 13px/1.2 inherit;
+}
+.preset-btn:hover{border-color:var(--accent);color:var(--accent2)}
+.room-inputs{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:16px}
+@media(min-width:640px){.room-inputs{grid-template-columns:repeat(3,1fr)}}
+.room-field label{display:block;font-size:13px;font-weight:700;color:var(--fg);margin-bottom:4px}
+.room-field input{
+  width:100%;padding:9px 11px;border:1px solid #cbd5e1;border-radius:9px;
+  font:600 15px/1.2 inherit;font-variant-numeric:tabular-nums;
+}
+.room-field input:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+.room-results{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:700px){.room-results{grid-template-columns:1fr 1fr}}
+.fit-card{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:#f8fafc;font-size:13.5px}
+.fit-card strong{display:block;font-size:14.5px;margin-bottom:4px}
+.fit-ok{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+.fit-warn{background:#fefce8;border-color:#fde047;color:#854d0e}
+.fit-no{background:#fef2f2;border-color:#fecaca;color:#991b1b}
