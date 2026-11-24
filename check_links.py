@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""SEO, affiliate-compliance, schema, and link checker for docs/."""
+"""SEO, HTML5 DOM, affiliate-compliance, schema, and link checker for docs/."""
 import html, json, os, re
+from html.parser import HTMLParser
 from urllib.parse import urlparse
 
 ROOT = "docs"
@@ -8,12 +9,29 @@ CFG = json.load(open("config.json"))
 BASE_URL = CFG["base_url"].rstrip("/")
 BP = urlparse(BASE_URL).path.rstrip("/")
 TAG = CFG["amazon_tag"]
+VOID = {"area","base","br","col","embed","hr","img","input","link","meta","param","source","track","wbr"}
 
-errs = []
-ext = set()
-pages = 0
-titles = {}
-descs = {}
+class DOMAudit(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.stack, self.ids, self.dups, self.mismatch = [], set(), [], []
+    def handle_starttag(self, tag, attrs):
+        d = dict(attrs)
+        if "id" in d:
+            if d["id"] in self.ids:
+                self.dups.append(d["id"])
+            self.ids.add(d["id"])
+        if tag not in VOID:
+            self.stack.append(tag)
+    def handle_endtag(self, tag):
+        if tag in VOID:
+            return
+        if self.stack and self.stack[-1] == tag:
+            self.stack.pop()
+        else:
+            self.mismatch.append(tag)
+
+errs, ext, pages, titles, descs = [], set(), 0, {}, {}
 
 for dp, _, fs in os.walk(ROOT):
     for f in fs:
@@ -23,6 +41,12 @@ for dp, _, fs in os.walk(ROOT):
         p = os.path.join(dp, f)
         s = open(p).read()
 
+        # DOM balance & duplicate IDs
+        dom = DOMAudit()
+        dom.feed(s)
+        if dom.dups or dom.mismatch or dom.stack:
+            errs.append(("dom error", p, dom.dups, dom.mismatch, dom.stack))
+
         # Robots check
         if CFG["noindex"]:
             if 'name="robots" content="noindex, nofollow"' not in s:
@@ -31,7 +55,6 @@ for dp, _, fs in os.walk(ROOT):
             if 'name="robots" content="index, follow"' not in s:
                 errs.append(("no index meta", p))
 
-        # Disclosure check
         if "As an Amazon Associate" not in s:
             errs.append(("no disclosure", p))
 
@@ -75,14 +98,19 @@ for dp, _, fs in os.walk(ROOT):
         if not cm or not cm.group(1).startswith(BASE_URL):
             errs.append(("bad canonical", p, cm.group(1) if cm else None))
 
-        # Image alt text check
+        # Image alt text & th scope
         for im in re.finditer(r"<img\b([^>]*)>", s):
             if not re.search(r'\balt="[^"]+"', im.group(1)):
                 errs.append(("missing img alt", p, im.group(0)))
+        for th in re.finditer(r"<th\b([^>]*)>", s):
+            if 'scope="' not in th.group(1):
+                errs.append(("th missing scope", p, th.group(0)))
 
         # Links & anchors
         for m in re.finditer(r'<a [^>]*href="([^"]+)"[^>]*>', s):
             tag, href = m.group(0), m.group(1)
+            if 'target="_blank"' in tag and "noopener" not in tag:
+                errs.append(("missing noopener", p, href))
             if "amazon.co.uk/dp/" in href:
                 if f"tag={TAG}" not in href:
                     errs.append(("bad tag", p, href))
@@ -113,7 +141,9 @@ for dp, _, fs in os.walk(ROOT):
         if not ld_blocks:
             errs.append(("missing json-ld", p))
         for raw_ld in ld_blocks:
-            json.loads(raw_ld)
+            obj = json.loads(raw_ld)
+            if "@context" not in obj or "@type" not in obj:
+                errs.append(("bad json-ld keys", p, obj))
         if re.search(r'(?i)"@type": ?"(Review|AggregateRating)"', s):
             errs.append(("review schema", p))
 
