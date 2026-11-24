@@ -58,6 +58,7 @@ COMPARE_PAGE = dict(
         ("/golf/launch-monitors-under-1000/", "Launch monitors under £1,000", "Compare Shot Scope LM1, Garmin R10, Rapsodo MLM2PRO and Square Golf indoor."),
     ],
     body='''<p class="lede">Start by filtering the category you are pricing up. Launch monitor brands differ mostly on where the unit sits (behind the ball vs beside it), whether simulator play needs an annual subscription, and whether you need a gaming PC.</p>
+<h2>Quick brand comparisons</h2>
 <div class="cards two">
   <a class="card tile" href="[[BP]]/compare/radar-vs-camera-launch-monitors/"><div><span class="card-tag">Deep dive</span><h3>Radar vs camera brands</h3><p>Behind-the-ball depth vs beside-the-ball side clearance, plus dual-handed play.</p></div><span class="tile-cta">Compare placement &rarr;</span></a>
   <a class="card tile" href="[[BP]]/compare/launch-monitor-subscriptions/"><div><span class="card-tag gold">Running costs</span><h3>Subscriptions &amp; software compared</h3><p>Which brands include free software vs annual fees for courses and GSPro.</p></div><span class="tile-cta">Compare software terms &rarr;</span></a>

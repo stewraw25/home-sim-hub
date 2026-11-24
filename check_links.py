@@ -35,9 +35,16 @@ for dp, _, fs in os.walk(ROOT):
         if "As an Amazon Associate" not in s:
             errs.append(("no disclosure", p))
 
-        # H1 count
+        # H1 count & sequential heading order
         if s.count("<h1") != 1:
             errs.append(("h1 count", p, s.count("<h1")))
+        hs = [int(x) for x in re.findall(r"<h([1-6])\b", s)]
+        prev = 0
+        for lvl in hs:
+            if prev and lvl > prev + 1:
+                errs.append(("heading skip", p, hs))
+                break
+            prev = lvl
 
         # Title uniqueness & length
         tm = re.search(r"<title>(.*?)</title>", s)

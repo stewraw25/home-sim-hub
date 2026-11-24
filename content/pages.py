@@ -101,6 +101,7 @@ dict(
         ("/golf/garage-golf-simulator/", "Garage golf simulator guide", "Step-by-step check for UK garages."),
     ],
     body='''<p class="lede">A home golf set-up can be as simple as a net and a mat in the garden, or a full indoor bay with a launch monitor, impact screen and projector. This section covers each part.</p>
+<h2>Explore home golf</h2>
 <div class="cards two">
 <a class="card tile" href="[[BP]]/golf/launch-monitors/"><div><h3>Launch monitors</h3><p>The device that measures each shot. Radar units sit behind you; camera units sit beside the ball.</p></div><span class="tile-cta">See launch monitors &rarr;</span></a>
 <a class="card tile" href="[[BP]]/golf/simulators/"><div><h3>Home simulator bays</h3><p>Enclosures, impact screens and projectors that turn a launch monitor into a simulator.</p></div><span class="tile-cta">See simulator bays &rarr;</span></a>
@@ -321,7 +322,7 @@ dict(
     body='''<p class="lede">Three measurements decide whether a golf simulator fits: ceiling height, room width and room depth. Each launch monitor maker publishes its own figures, so start with the one you're considering.</p>
 <div class="callout">The quickest check, which SkyTrak suggests: stand where you'd hit, take a slow practice swing with your driver, and see whether you clear the ceiling, walls and lights.</div>
 <div class="room-tool" id="room-checker">
-<h3>Check your room against makers' published figures</h3>
+<h2>Check your room against makers' published figures</h2>
 <p class="small">Enter your room dimensions in metres (measured from the top of the hitting mat to the lowest beam or door track) or pick a UK preset:</p>
 <div class="preset-row">
   <button type="button" class="preset-btn" data-room-preset="2.40,2.80,5.00">UK single garage (2.4 × 2.8 × 5.0 m)</button>
@@ -504,6 +505,7 @@ dict(
 <tr><td>Software</td><td>Virtual rounds need an active Garmin Golf membership (listing)</td><td>Listing title says 1 year of software included</td></tr>
 <tr><td>Size and weight (listing)</td><td>26.9 x 19.1 x 41.9 cm; 9 lb</td><td>Package 34.11 x 29.39 x 14.1 cm; 2.27 kg</td></tr>
 </tbody></table></div>
+<h2>Amazon UK product details</h2>
 [[p:garmin-approach-r50]][[p:skytrak-st-max]]
 <h2>How to choose between them</h2>
 <ul>
@@ -543,6 +545,7 @@ dict(
 <tr><td>SimSpace Deluxe Home Driving Net</td><td>2.5 m x 2.5 m x 3.84 m</td><td>[[price:simspace-deluxe-net]]</td></tr>
 <tr><td>Hillman PGM practice cage</td><td>3 m x 3 m</td><td>[[price:hillman-pgm-3m-cage]]</td></tr>
 </tbody></table></div>
+<h2>Checked garden nets</h2>
 [[p:amazon-basics-golf-net]][[p:forza-7ft-net]][[p:simspace-deluxe-net]][[p:hillman-pgm-3m-cage]]
 <h2>Before you buy</h2>
 <ul>
@@ -573,6 +576,7 @@ dict(
         ("/golf/", "Home golf bays", "Explore launch monitors, nets and simulator bays."),
     ],
     body='''<p class="lede">A sim racing set-up needs a wheel and pedals, something solid to mount them on, and a screen in front of you. This section covers each part and how much room it takes.</p>
+<h2>Explore sim racing</h2>
 <div class="cards two">
 <a class="card tile" href="[[BP]]/racing/room-and-setup-guide/"><div><h3>Room and set-up guide</h3><p>Floor space for desk, stand and cockpit set-ups, using makers' dimensions.</p></div><span class="tile-cta">Check footprints &rarr;</span></a>
 <a class="card tile" href="[[BP]]/racing/direct-drive-wheels/"><div><h3>Wheels and pedals</h3><p>Direct drive and geared wheels on Amazon UK, plus pedal sets.</p></div><span class="tile-cta">See wheels &amp; pedals &rarr;</span></a>
