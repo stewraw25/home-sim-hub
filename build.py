@@ -340,6 +340,20 @@ def layout(pg, body):
             }
         )
 
+    if pg.get("howto"):
+        ht = pg["howto"]
+        ld.append(
+            {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                "name": sub_brand(ht["name"]),
+                "description": desc,
+                "step": [
+                    {"@type": "HowToStep", "position": i + 1, "name": sub_brand(st_name), "text": sub_brand(st_text)}
+                    for i, (st_name, st_text) in enumerate(ht["steps"])
+                ],
+            }
+        )
     ldjson = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
     has_links = "amazon.co.uk/dp/" in body or pg.get("disclosure", True)
     disc = f'<div class="disc-bar"><div class="wrap">{DISC_SHORT.format(name=esc(NAME), dl=u("/affiliate-disclosure/"))}</div></div>' if has_links else ""
@@ -396,9 +410,10 @@ def layout(pg, body):
 <link rel="canonical" href="{full(path)}">
 <meta property="og:type" content="{"article" if pg.get("type")=="article" else "website"}"><meta property="og:site_name" content="{esc(NAME)}">
 <meta property="og:title" content="{esc(raw_title)}"><meta property="og:description" content="{esc(desc)}">
-<meta property="og:url" content="{full(path)}"><meta property="og:image" content="{full("/og.png")}"><meta property="og:locale" content="en_GB">
+<meta name="theme-color" content="#07261a">
+<meta property="og:url" content="{full(path)}"><meta property="og:image" content="{full("/og.png")}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="{u("/favicon.svg")}" type="image/svg+xml"><link rel="stylesheet" href="{u("/style.css")}">
+<link rel="icon" href="{u("/favicon.svg")}" type="image/svg+xml"><link rel="apple-touch-icon" href="{u("/logo.png")}"><link rel="stylesheet" href="{u("/style.css")}">
 {ldjson}</head><body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site"><div class="wrap"><a class="logo" href="{u("/")}">{LOGO_ICON}<span>{wordmark_html}</span></a><nav class="main" aria-label="Main">{nav}</nav></div></header>

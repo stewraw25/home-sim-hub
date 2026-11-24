@@ -68,6 +68,16 @@ dict(
   <span class="tile-cta">Explore sim racing &rarr;</span>
 </a>
 </div>
+<h2>Quick setup summary (UK)</h2>
+<div class="tbl"><table>
+<thead><tr><th>Setup type</th><th>Key space check</th><th>Example gear (checked [[checked]])</th><th>Start here</th></tr></thead>
+<tbody>
+<tr><td><strong>Garden net &amp; entry monitor</strong></td><td>Outdoor swing room + clearance behind net</td><td>FORZA / Amazon Basics net + Shot Scope LM1 or Garmin R10</td><td>[[link:/golf/golf-nets-for-the-garden/|Garden nets]] &middot; [[link:/golf/launch-monitors-under-1000/|Under £1,000]]</td></tr>
+<tr><td><strong>Compact indoor camera bay</strong></td><td>Saves ~2 m behind golfer; ~0.4–0.5 m beside tee</td><td>Square Golf, SkyTrak ST MAX, Uneekor or Garmin R50</td><td>[[link:/compare/radar-vs-camera-launch-monitors/|Radar vs camera]]</td></tr>
+<tr><td><strong>Full garage simulator bay</strong></td><td>2.74–3.05 m+ ceiling clearance; 30 cm+ screen buffer</td><td>SimSpace enclosure + impact screen + BenQ / Optoma projector</td><td>[[link:/golf/garage-golf-simulator/|Garage guide]] &middot; [[link:/golf/golf-simulator-projectors/|Projectors]]</td></tr>
+<tr><td><strong>Home sim racing rig</strong></td><td>~136 x 54 cm (folding) to 170 x 60 cm (cockpit)</td><td>Logitech, Thrustmaster, Fanatec or MOZA + Playseat / NLR</td><td>[[link:/compare/sim-racing-brands/|Compare racing brands]]</td></tr>
+</tbody>
+</table></div>
 <h2>Popular UK planning guides</h2>
 <div class="cards two">
 <a class="card tile" href="[[BP]]/golf/room-size-guide/"><div><h3>How much room do you need for a golf simulator?</h3><p>Metre and foot clearances for ceilings, swing width, radar depth behind the ball and camera units beside the tee.</p></div><span class="tile-cta">Check room sizes &rarr;</span></a>
@@ -303,6 +313,15 @@ dict(
 # ---------------- ROOM SIZE GUIDE ----------------
 dict(
     path="/golf/room-size-guide/",
+    howto=dict(
+        name="How to check if a golf simulator fits your UK room",
+        steps=[
+            ("Measure ceiling height from the hitting mat", "Measure from the top of your hitting mat to the lowest overhead beam, light or garage door track (makers cite 2.74 m to 3.05 m+)."),
+            ("Measure room width and depth", "Check width for full swings (SkyTrak suggests 10 ft minimum, 12 ft comfortable, plus 1-2 ft if sharing left and right-handed) and depth for radar vs camera placement."),
+            ("Check net or enclosure clearance", "Verify the net, screen or enclosure dimensions and leave the maker's stated buffer behind the fabric."),
+            ("Do a slow driver swing test", "Stand at the intended tee position and make a slow driver swing to verify full clearance."),
+        ],
+    ),
     title="How much room do you need for a golf simulator? (UK guide)",
     short="Room size guide",
     crumbs=GOLF,
@@ -443,6 +462,15 @@ dict(
 # ---------------- GUIDE: GARAGE ----------------
 dict(
     path="/golf/garage-golf-simulator/",
+    howto=dict(
+        name="How to set up a golf simulator in a UK garage",
+        steps=[
+            ("Measure ceiling height, width and depth", "Measure from the mat surface to any garage door track, opener or roof beam."),
+            ("Pick a launch monitor for your depth", "Choose a behind-the-ball radar unit if you have 4.5 m+ depth, or a beside-the-ball camera unit to save depth."),
+            ("Choose a padded enclosure or impact screen", "Check frame width and height against your garage walls and leave free space behind the screen."),
+            ("Add a hitting mat and short-throw projector", "Position a short-throw projector based on its throw ratio so the golfer does not cast a shadow."),
+        ],
+    ),
     title="Setting up a golf simulator in a UK garage",
     short="Garage simulator",
     crumbs=GOLF,
