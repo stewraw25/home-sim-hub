@@ -21,8 +21,8 @@ dict(path="/", title="Home Sim Hub: UK guides to home golf bays and sim racing r
  h1="Build a home simulator that fits your room",
  body='''<p class="lede">Home Sim Hub explains what you need for a home golf bay or a sim racing setup, how much room each one takes, and which Amazon UK products fit each part of the job.</p>
 <p>We work from the makers' own manuals and set-up pages and from Amazon UK listings. We don't test products ourselves, and we say where each figure comes from.</p>
-<div class="cards two">
 <h2>Choose a section</h2>
+<div class="cards two">
 <a class="card tile" href="[[BP]]/golf/"><h3>Home golf</h3><p>Launch monitors, home simulator bays, nets, mats and how much room you need.</p></a>
 <a class="card tile" href="[[BP]]/racing/"><h3>Sim racing</h3><p>Wheels, pedals, cockpits, seats and monitor stands, and how much floor space a rig takes.</p></a>
 </div>
