@@ -29,6 +29,10 @@
 <text x="242" y="192" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#bbf7d0">~0.4m – 0.5m beside tee</text>
 </svg></div></div></div></section>
 <main><div class="wrap"><p class="crumbs"><a href="/home-sim-hub/">Home</a> &rsaquo; Compare brands</p><article><p class="meta">Updated 2026-11-24. Researched from makers' published documents and Amazon UK listings. We have not tested these products.</p><p class="lede">Start by filtering the category you are pricing up. Launch monitor brands differ mostly on where the unit sits (behind the ball vs beside it), whether simulator play needs an annual subscription, and whether you need a gaming PC.</p>
+<div class="cards two">
+  <a class="card tile" href="/home-sim-hub/compare/radar-vs-camera-launch-monitors/"><div><span class="card-tag">Deep dive</span><h3>Radar vs camera brands</h3><p>Behind-the-ball depth vs beside-the-ball side clearance, plus dual-handed play.</p></div><span class="tile-cta">Compare placement &rarr;</span></a>
+  <a class="card tile" href="/home-sim-hub/compare/launch-monitor-subscriptions/"><div><span class="card-tag gold">Running costs</span><h3>Subscriptions &amp; software compared</h3><p>Which brands include free software vs annual fees for courses and GSPro.</p></div><span class="tile-cta">Compare software terms &rarr;</span></a>
+</div>
 <div class="filter-bar" role="group" aria-label="Filter brand categories" data-filter-group data-target="#brand-sections">
   <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All brands</button>
   <button type="button" class="filter-btn" data-filter="lm" aria-pressed="false">Launch monitors (8)</button>
@@ -144,8 +148,15 @@
 </table></div>
 
 <h2>Launch monitor brand profiles</h2>
-<div class="brand-grid">
-  <div class="brand-card">
+<div class="filter-bar" role="group" aria-label="Filter launch monitor brands by setup" data-filter-group data-attr="data-lm" data-target="#lm-cards">
+  <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All 8 brands</button>
+  <button type="button" class="filter-btn" data-filter="beside" aria-pressed="false">Beside ball (saves depth)</button>
+  <button type="button" class="filter-btn" data-filter="behind" aria-pressed="false">Behind ball (radar)</button>
+  <button type="button" class="filter-btn" data-filter="under1k" aria-pressed="false">Under £1,000 options</button>
+  <button type="button" class="filter-btn" data-filter="nosub" aria-pressed="false">No mandatory sub option</button>
+</div>
+<div class="brand-grid" id="lm-cards">
+  <div class="brand-card" data-lm="behind beside under1k">
     <div>
       <div class="brand-top"><h3>Garmin (R10 &amp; R50)</h3><span class="badge badge-hybrid">Radar &amp; Camera</span></div>
       <p class="small">Covers both entry-level portable radar and standalone touchscreen camera simulation.</p>
@@ -161,7 +172,7 @@
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="behind under1k">
     <div>
       <div class="brand-top"><h3>Rapsodo (MLM2PRO)</h3><span class="badge badge-hybrid">Dual Camera + Radar</span></div>
       <p class="small">Combines Doppler radar behind the golfer with dual optical cameras for shot &amp; impact video.</p>
@@ -177,7 +188,7 @@
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="beside">
     <div>
       <div class="brand-top"><h3>SkyTrak (ST MAX)</h3><span class="badge badge-camera">Beside-Ball Photometric</span></div>
       <p class="small">Long-standing indoor simulator brand placing sensors beside the tee to save room depth.</p>
@@ -193,7 +204,7 @@
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="beside under1k">
     <div>
       <div class="brand-top"><h3>Square Golf (Indoor &amp; Omni)</h3><span class="badge badge-camera">Compact Camera</span></div>
       <p class="small">Dedicated indoor camera units priced between entry radar monitors and higher-end commercial units.</p>
@@ -208,7 +219,7 @@
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="behind under1k nosub">
     <div>
       <div class="brand-top"><h3>Shot Scope (LM1)</h3><span class="badge badge-radar">Entry Doppler Radar</span></div>
       <p class="small">UK golf-tech brand offering a compact screen-equipped radar monitor with no app subscription.</p>
@@ -224,7 +235,7 @@
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="beside">
     <div>
       <div class="brand-top"><h3>Uneekor (EYE MINI &amp; LITE)</h3><span class="badge badge-camera">Dual IR Cameras</span></div>
       <p class="small">Known for high-speed impact video (Club Optix) and dimple-reading ball tracking without marked balls.</p>
@@ -239,7 +250,7 @@
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="behind nosub">
     <div>
       <div class="brand-top"><h3>FlightScope (Mevo Gen2 &amp; Mevo+)</h3><span class="badge badge-radar">3D Doppler Radar</span></div>
       <p class="small">Radar systems placed behind the tee, suited to dual-handed bays because nothing sits beside the mat.</p>
@@ -254,7 +265,7 @@
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="beside nosub">
     <div>
       <div class="brand-top"><h3>Bushnell &amp; Foresight (Launch Pro / GC3)</h3><span class="badge badge-camera">Triscopic 3-Camera</span></div>
       <p class="small">Sibling hardware platforms built on Foresight's three-camera infrared tracking beside the ball.</p>
@@ -339,7 +350,7 @@
 <li>Uneekor EYE MINI LITE manual (PDF): <a href="https://download.uneekor.com/docs/EYE_MINI_LITE_Manual.pdf" rel="noopener" target="_blank">https://download.uneekor.com/docs/EYE_MINI_LITE_Manual.pdf</a></li>
 <li>FlightScope Mevo and Mevo+ FAQ: <a href="https://flightscope.com/pages/faq" rel="noopener" target="_blank">https://flightscope.com/pages/faq</a></li>
 <li>Amazon UK listings checked on 24 Nov 2026 (links tagged stewraw25-21).</li>
-</ul><section class="faq-sec" aria-label="Frequently asked questions"><h2>Frequently asked questions</h2><details class="faq-item"><summary>Which launch monitor brands need the least room depth?</summary><div class="faq-body"><p>Photometric camera units that sit beside the ball — including Garmin Approach R50, SkyTrak ST MAX, Square Golf, Bushnell Launch Pro, Foresight GC3 and Uneekor EYE MINI / EYE MINI LITE — do not need 1.8 to 2.7 m of open floor behind the golfer. You still need safe ball-to-screen distance and full swing clearance.</p></div></details><details class="faq-item"><summary>Which launch monitor brands have no mandatory subscription?</summary><div class="faq-body"><p>Shot Scope LM1 uses the free Shot Scope mobile app with no subscription. Foresight GC3 (sold in the UK at £7,500) includes FSX Play software with no recurring fee. FlightScope Mevo+ includes bundled E6 courses and supports direct GSPro connection without a FlightScope subscription, though third-party sim software licences still apply separately.</p></div></details><details class="faq-item"><summary>Which launch monitors work without a gaming PC?</summary><div class="faq-body"><p>Shot Scope LM1 has its own 3.5 inch screen and mobile app. Garmin Approach R50 has a built-in 10 inch touchscreen. Garmin R10, Rapsodo MLM2PRO and Uneekor EYE MINI support mobile or iPad apps (Uneekor EYE MINI LITE requires a wired Windows PC).</p></div></details><details class="faq-item"><summary>Are Amazon product prices on this page live?</summary><div class="faq-body"><p>No. Amazon UK prices shown here were checked on 24 Nov 2026 and change frequently. Always check Amazon UK or the maker's UK store for the current price before buying.</p></div></details><details class="faq-item"><summary>Do you test these simulator brands hands-on?</summary><div class="faq-body"><p>No. We research every figure from makers' manuals, official UK product pages and Amazon UK listings, and we have not tested these products ourselves.</p></div></details></section><section class="related-sec"><h2>Related guides &amp; comparisons</h2><div class="cards three"><a class="card tile" href="/home-sim-hub/golf/launch-monitors-under-1000/"><div><h3>Launch monitors under £1,000</h3><p>Compare Shot Scope LM1, Garmin R10, Rapsodo MLM2PRO and Square Golf indoor.</p></div><span class="tile-cta">Read guide &rarr;</span></a><a class="card tile" href="/home-sim-hub/golf/garmin-r50-vs-skytrak-st-max/"><div><h3>Garmin R50 vs SkyTrak ST MAX</h3><p>Side-by-side breakdown of two beside-the-ball camera systems.</p></div><span class="tile-cta">Read guide &rarr;</span></a><a class="card tile" href="/home-sim-hub/golf/simulators/"><div><h3>Enclosures, screens and projectors</h3><p>How SimSpace, GoSports, BenQ and Optoma components fit into a bay.</p></div><span class="tile-cta">Read guide &rarr;</span></a></div></section></article></div></main>
+</ul><section class="faq-sec" aria-label="Frequently asked questions"><h2>Frequently asked questions</h2><details class="faq-item"><summary>Which launch monitor brands need the least room depth?</summary><div class="faq-body"><p>Photometric camera units that sit beside the ball — including Garmin Approach R50, SkyTrak ST MAX, Square Golf, Bushnell Launch Pro, Foresight GC3 and Uneekor EYE MINI / EYE MINI LITE — do not need 1.8 to 2.7 m of open floor behind the golfer. You still need safe ball-to-screen distance and full swing clearance.</p></div></details><details class="faq-item"><summary>Which launch monitor brands have no mandatory subscription?</summary><div class="faq-body"><p>Shot Scope LM1 uses the free Shot Scope mobile app with no subscription. Foresight GC3 (sold in the UK at £7,500) includes FSX Play software with no recurring fee. FlightScope Mevo+ includes bundled E6 courses and supports direct GSPro connection without a FlightScope subscription, though third-party sim software licences still apply separately.</p></div></details><details class="faq-item"><summary>Which launch monitors work without a gaming PC?</summary><div class="faq-body"><p>Shot Scope LM1 has its own 3.5 inch screen and mobile app. Garmin Approach R50 has a built-in 10 inch touchscreen. Garmin R10, Rapsodo MLM2PRO and Uneekor EYE MINI support mobile or iPad apps (Uneekor EYE MINI LITE requires a wired Windows PC).</p></div></details><details class="faq-item"><summary>Are Amazon product prices on this page live?</summary><div class="faq-body"><p>No. Amazon UK prices shown here were checked on 24 Nov 2026 and change frequently. Always check Amazon UK or the maker's UK store for the current price before buying.</p></div></details><details class="faq-item"><summary>Do you test these simulator brands hands-on?</summary><div class="faq-body"><p>No. We research every figure from makers' manuals, official UK product pages and Amazon UK listings, and we have not tested these products ourselves.</p></div></details></section><section class="related-sec"><h2>Related guides &amp; comparisons</h2><div class="cards three"><a class="card tile" href="/home-sim-hub/compare/radar-vs-camera-launch-monitors/"><div><h3>Radar vs camera launch monitors</h3><p>How placement, room depth and left/right-handed bays differ by brand.</p></div><span class="tile-cta">Read guide &rarr;</span></a><a class="card tile" href="/home-sim-hub/compare/launch-monitor-subscriptions/"><div><h3>Launch monitor subscriptions compared</h3><p>Free apps vs annual software memberships across 8 brands.</p></div><span class="tile-cta">Read guide &rarr;</span></a><a class="card tile" href="/home-sim-hub/golf/launch-monitors-under-1000/"><div><h3>Launch monitors under £1,000</h3><p>Compare Shot Scope LM1, Garmin R10, Rapsodo MLM2PRO and Square Golf indoor.</p></div><span class="tile-cta">Read guide &rarr;</span></a></div></section></article></div></main>
 <footer class="site"><div class="wrap"><strong>Home Sim Hub</strong> &middot; UK guides to home golf bays, launch monitor brands and sim racing rigs<nav aria-label="Footer"><a href="/home-sim-hub/golf/">Home golf</a><a href="/home-sim-hub/compare/">Compare brands</a><a href="/home-sim-hub/racing/">Sim racing</a><a href="/home-sim-hub/about/">About</a><a href="/home-sim-hub/affiliate-disclosure/">Affiliate disclosure</a><a href="/home-sim-hub/privacy/">Privacy</a><a href="/home-sim-hub/contact/">Contact</a></nav>
 <p>As an Amazon Associate, Home Sim Hub earns from qualifying purchases. Prices and availability were checked on 24 Nov 2026 and can change at any time; the price on Amazon at the time of purchase applies. We research products from makers' published documents and Amazon UK listings and have not tested them ourselves.</p>
 <p>Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p></div></footer>

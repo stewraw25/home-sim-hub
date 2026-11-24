@@ -13,7 +13,7 @@ _dir = os.path.dirname(os.path.abspath(__file__))
 _spec = importlib.util.spec_from_file_location("pages_compare", os.path.join(_dir, "pages_compare.py"))
 _mod = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_mod)
-COMPARE_PAGE = _mod.COMPARE_PAGE
+COMPARE_PAGES = _mod.COMPARE_PAGES
 
 GOLF = [("Home golf", "/golf/")]
 RACE = [("Sim racing", "/racing/")]
@@ -78,7 +78,7 @@ dict(
 <h2>How we research every page</h2>
 <p>We work from makers' published user manuals, official UK product pages and Amazon UK listings checked on [[checked]]. We do not test products ourselves, do not publish star ratings, and name the exact source for every dimension and price.</p>'''),
 
-COMPARE_PAGE,
+*COMPARE_PAGES,
 
 # ---------------- GOLF HUB ----------------
 dict(

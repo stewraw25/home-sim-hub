@@ -4,15 +4,16 @@ document.addEventListener("click",function(e){
     var g=b.closest("[data-filter-group]");
     if(!g)return;
     var target=b.getAttribute("data-filter");
+    var attr=g.getAttribute("data-attr")||"data-cat";
     g.querySelectorAll("[data-filter]").forEach(function(btn){
       btn.classList.toggle("is-active",btn===b);
       btn.setAttribute("aria-pressed",btn===b?"true":"false");
     });
     var scope=document.querySelector(g.getAttribute("data-target")||"main");
     if(!scope)return;
-    scope.querySelectorAll("[data-cat]").forEach(function(el){
-      var cats=(el.getAttribute("data-cat")||"").split(/\s+/);
-      var show=target==="all"||cats.indexOf(target)!==-1;
+    scope.querySelectorAll("["+attr+"]").forEach(function(el){
+      var vals=(el.getAttribute(attr)||"").split(/\s+/);
+      var show=target==="all"||vals.indexOf(target)!==-1;
       el.classList.toggle("is-hidden",!show);
     });
   }
@@ -36,18 +37,18 @@ function updateRoomFit(){
   else{ceilCls="fit-no";ceilNote="Under 2.74 m (9 ft): full driver swings may hit the ceiling or beams. Check iron/wedge clearance only, or use an outdoor garden net.";}
 
   var radarCls,radarNote;
-  if(d>=4.8 && w>=3.0){radarCls="fit-ok";radarNote="Depth meets Garmin R10 (1.8–2.4 m behind + 2.4 m+ ball flight) and Rapsodo MLM2PRO (~4.3 m+ total).";}
+  if(d>=4.8 && w>=3.0){radarCls="fit-ok";radarNote="Depth meets Garmin R10 (1.8-2.4 m behind + 2.4 m+ ball flight) and Rapsodo MLM2PRO (~4.3 m+ total).";}
   else if(d>=4.3 && w>=2.7){radarCls="fit-warn";radarNote="Close to the ~4.3 m (14 ft+) Rapsodo MLM2PRO minimum; check exact net clearance before ordering a behind-the-ball unit.";}
   else{radarCls="fit-no";radarNote="Under 4.3 m depth: tight for behind-the-ball radar units indoors. Beside-the-ball camera units save behind-golfer depth.";}
 
   var camCls,camNote;
   if(d>=3.6 && w>=3.05){camCls="fit-ok";camNote="Clears SkyTrak's 10 ft x 10 ft (3.05 x 3.05 m) minimum unobstructed area and Shop Indoor Golf's 12 ft (3.66 m) Square Omni depth.";}
   else if(d>=3.05 && w>=2.8){camCls="fit-warn";camNote="Tight width or depth for a full enclosure; measure swing width carefully (especially if sharing left/right-handed).";}
-  else{camCls="fit-no";camNote="Under 3.05 m unobstructed length/width: check whether a full iron swing clears walls before installing.";}
+  else{camCls="fit-no";radarNote=radarNote;camNote="Under 3.05 m unobstructed length/width: check whether a full iron swing clears walls before installing.";}
 
   var bayCls,bayNote;
-  if(d>=4.9 && w>=3.65 && h>=2.74){bayCls="fit-ok";bayNote="Fits SkyTrak's suggested 16–17 ft depth and 12 ft width for a spacious projected bay.";}
-  else{bayCls="fit-warn";bayNote="Smaller than SkyTrak's 16–17 ft x 12 ft comfortable enclosure guidance; consider a compact net + beside-the-ball unit.";}
+  if(d>=4.9 && w>=3.65 && h>=2.74){bayCls="fit-ok";bayNote="Fits SkyTrak's suggested 16-17 ft depth and 12 ft width for a spacious projected bay.";}
+  else{bayCls="fit-warn";bayNote="Smaller than SkyTrak's 16-17 ft x 12 ft comfortable enclosure guidance; consider a compact net + beside-the-ball unit.";}
 
   box.innerHTML=
     '<div class="fit-card '+ceilCls+'"><strong>Ceiling ('+h.toFixed(2)+' m)</strong>'+ceilNote+'</div>'+

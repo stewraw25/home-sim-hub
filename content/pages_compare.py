@@ -1,4 +1,6 @@
-# Brand comparison hub page data (imported by content/pages.py)
+# Brand comparison hub and sub-pages (imported by content/pages.py)
+
+COMP = [("Compare brands", "/compare/")]
 
 SRC_COMPARE = '''<h2>Sources</h2><ul class="sources">
 <li>Garmin R10 manual: https://www8.garmin.com/manuals/webhelp/GUID-E2BBF6BE-4276-436F-B697-59ABEFD61933/EN-US/GUID-88F65277-47D4-403D-8F79-719CAA256D6B.html</li>
@@ -49,11 +51,15 @@ COMPARE_PAGE = dict(
         ("Do you test these simulator brands hands-on?", "No. We research every figure from makers' manuals, official UK product pages and Amazon UK listings, and we have not tested these products ourselves."),
     ],
     related=[
+        ("/compare/radar-vs-camera-launch-monitors/", "Radar vs camera launch monitors", "How placement, room depth and left/right-handed bays differ by brand."),
+        ("/compare/launch-monitor-subscriptions/", "Launch monitor subscriptions compared", "Free apps vs annual software memberships across 8 brands."),
         ("/golf/launch-monitors-under-1000/", "Launch monitors under £1,000", "Compare Shot Scope LM1, Garmin R10, Rapsodo MLM2PRO and Square Golf indoor."),
-        ("/golf/garmin-r50-vs-skytrak-st-max/", "Garmin R50 vs SkyTrak ST MAX", "Side-by-side breakdown of two beside-the-ball camera systems."),
-        ("/golf/simulators/", "Enclosures, screens and projectors", "How SimSpace, GoSports, BenQ and Optoma components fit into a bay."),
     ],
     body='''<p class="lede">Start by filtering the category you are pricing up. Launch monitor brands differ mostly on where the unit sits (behind the ball vs beside it), whether simulator play needs an annual subscription, and whether you need a gaming PC.</p>
+<div class="cards two">
+  <a class="card tile" href="[[BP]]/compare/radar-vs-camera-launch-monitors/"><div><span class="card-tag">Deep dive</span><h3>Radar vs camera brands</h3><p>Behind-the-ball depth vs beside-the-ball side clearance, plus dual-handed play.</p></div><span class="tile-cta">Compare placement &rarr;</span></a>
+  <a class="card tile" href="[[BP]]/compare/launch-monitor-subscriptions/"><div><span class="card-tag gold">Running costs</span><h3>Subscriptions &amp; software compared</h3><p>Which brands include free software vs annual fees for courses and GSPro.</p></div><span class="tile-cta">Compare software terms &rarr;</span></a>
+</div>
 <div class="filter-bar" role="group" aria-label="Filter brand categories" data-filter-group data-target="#brand-sections">
   <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All brands</button>
   <button type="button" class="filter-btn" data-filter="lm" aria-pressed="false">Launch monitors (8)</button>
@@ -169,8 +175,15 @@ COMPARE_PAGE = dict(
 </table></div>
 
 <h2>Launch monitor brand profiles</h2>
-<div class="brand-grid">
-  <div class="brand-card">
+<div class="filter-bar" role="group" aria-label="Filter launch monitor brands by setup" data-filter-group data-attr="data-lm" data-target="#lm-cards">
+  <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All 8 brands</button>
+  <button type="button" class="filter-btn" data-filter="beside" aria-pressed="false">Beside ball (saves depth)</button>
+  <button type="button" class="filter-btn" data-filter="behind" aria-pressed="false">Behind ball (radar)</button>
+  <button type="button" class="filter-btn" data-filter="under1k" aria-pressed="false">Under £1,000 options</button>
+  <button type="button" class="filter-btn" data-filter="nosub" aria-pressed="false">No mandatory sub option</button>
+</div>
+<div class="brand-grid" id="lm-cards">
+  <div class="brand-card" data-lm="behind beside under1k">
     <div>
       <div class="brand-top"><h3>Garmin (R10 &amp; R50)</h3><span class="badge badge-hybrid">Radar &amp; Camera</span></div>
       <p class="small">Covers both entry-level portable radar and standalone touchscreen camera simulation.</p>
@@ -186,7 +199,7 @@ COMPARE_PAGE = dict(
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="behind under1k">
     <div>
       <div class="brand-top"><h3>Rapsodo (MLM2PRO)</h3><span class="badge badge-hybrid">Dual Camera + Radar</span></div>
       <p class="small">Combines Doppler radar behind the golfer with dual optical cameras for shot &amp; impact video.</p>
@@ -202,7 +215,7 @@ COMPARE_PAGE = dict(
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="beside">
     <div>
       <div class="brand-top"><h3>SkyTrak (ST MAX)</h3><span class="badge badge-camera">Beside-Ball Photometric</span></div>
       <p class="small">Long-standing indoor simulator brand placing sensors beside the tee to save room depth.</p>
@@ -218,7 +231,7 @@ COMPARE_PAGE = dict(
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="beside under1k">
     <div>
       <div class="brand-top"><h3>Square Golf (Indoor &amp; Omni)</h3><span class="badge badge-camera">Compact Camera</span></div>
       <p class="small">Dedicated indoor camera units priced between entry radar monitors and higher-end commercial units.</p>
@@ -233,7 +246,7 @@ COMPARE_PAGE = dict(
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="behind under1k nosub">
     <div>
       <div class="brand-top"><h3>Shot Scope (LM1)</h3><span class="badge badge-radar">Entry Doppler Radar</span></div>
       <p class="small">UK golf-tech brand offering a compact screen-equipped radar monitor with no app subscription.</p>
@@ -249,7 +262,7 @@ COMPARE_PAGE = dict(
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="beside">
     <div>
       <div class="brand-top"><h3>Uneekor (EYE MINI &amp; LITE)</h3><span class="badge badge-camera">Dual IR Cameras</span></div>
       <p class="small">Known for high-speed impact video (Club Optix) and dimple-reading ball tracking without marked balls.</p>
@@ -264,7 +277,7 @@ COMPARE_PAGE = dict(
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="behind nosub">
     <div>
       <div class="brand-top"><h3>FlightScope (Mevo Gen2 &amp; Mevo+)</h3><span class="badge badge-radar">3D Doppler Radar</span></div>
       <p class="small">Radar systems placed behind the tee, suited to dual-handed bays because nothing sits beside the mat.</p>
@@ -279,7 +292,7 @@ COMPARE_PAGE = dict(
     </div>
   </div>
 
-  <div class="brand-card">
+  <div class="brand-card" data-lm="beside nosub">
     <div>
       <div class="brand-top"><h3>Bushnell &amp; Foresight (Launch Pro / GC3)</h3><span class="badge badge-camera">Triscopic 3-Camera</span></div>
       <p class="small">Sibling hardware platforms built on Foresight's three-camera infrared tracking beside the ball.</p>
@@ -354,3 +367,80 @@ COMPARE_PAGE = dict(
 </div>
 ''' + SRC_COMPARE,
 )
+
+RADAR_VS_CAMERA_PAGE = dict(
+    path="/compare/radar-vs-camera-launch-monitors/",
+    title="Radar vs camera golf launch monitors compared (UK)",
+    short="Radar vs camera",
+    crumbs=COMP,
+    type="article",
+    description="Radar vs photometric camera golf launch monitors compared for UK rooms: Garmin, Rapsodo, FlightScope, Shot Scope, SkyTrak, Uneekor, Square Golf and Bushnell.",
+    faq=[
+        ("Which launch monitor type works for both left- and right-handed players without moving the unit?", "Behind-the-ball radar units such as the Garmin Approach R10, Rapsodo MLM2PRO and FlightScope Mevo+ sit centred behind the golfer, so left- and right-handed players do not need to move the hardware between shots."),
+        ("Why do camera launch monitors need less room depth?", "Photometric camera units sit 0.4 to 0.5 m beside the hitting zone instead of 1.8 to 2.7 m behind the golfer, saving roughly 2 m of floor depth."),
+    ],
+    related=[
+        ("/compare/", "Compare all 8 brands", "Full matrix with UK prices, software notes and Amazon UK links."),
+        ("/golf/room-size-guide/", "Interactive room size checker", "Enter your room height, width and depth to see what fits."),
+        ("/compare/launch-monitor-subscriptions/", "Launch monitor subscriptions", "Compare ongoing software fees by brand."),
+    ],
+    body='''<p class="lede">Choosing a launch monitor brand starts with where the hardware sits. Behind-the-ball radar and beside-the-ball camera units place different demands on room depth, lighting and dual-handed setups.</p>
+[[svg:radar-vs-camera]]
+<h2>Side-by-side comparison</h2>
+<div class="tbl"><table>
+<thead><tr><th>Factor</th><th>Behind-the-ball radar</th><th>Beside-the-ball camera</th></tr></thead>
+<tbody>
+<tr><td>Example brands</td><td>Garmin R10, Rapsodo MLM2PRO, Shot Scope LM1, FlightScope Mevo+</td><td>Garmin R50, SkyTrak ST MAX, Square Golf, Uneekor EYE MINI / LITE, Bushnell Launch Pro, Foresight GC3</td></tr>
+<tr><td>Unit placement</td><td>1.4 m to 2.7 m (5 to 9 ft) behind the ball</td><td>~0.4 m to 0.5 m to the side of the tee</td></tr>
+<tr><td>Total indoor depth</td><td>Needs behind-tee space plus 2.4 m+ ball flight (often 4.3 m+ total)</td><td>Saves behind-golfer depth; still needs swing + ball-to-screen room</td></tr>
+<tr><td>Left &amp; right-handed play</td><td>Unit stays put behind the hitting line</td><td>Unit must be moved across the mat unless using an overhead rig</td></tr>
+<tr><td>Indoor spin measurement</td><td>FlightScope Mevo+ and Rapsodo MLM2PRO note dot/RCT/RPT balls indoors for spin</td><td>Reads standard golf balls directly via high-speed cameras</td></tr>
+</tbody>
+</table></div>
+<h2>Checked Amazon UK models</h2>
+<p>If you have 4.5 m+ of depth in a UK garage, behind-the-ball models keep entry costs lower: [[buy:shot-scope-lm1|Shot Scope LM1]] ([[price:shot-scope-lm1]]), [[buy:garmin-approach-r10|Garmin Approach R10]] ([[price:garmin-approach-r10]]) and [[buy:rapsodo-mlm2pro|Rapsodo MLM2PRO]] ([[price:rapsodo-mlm2pro]]).</p>
+<p>In shorter spare rooms where behind-golfer depth is limited, beside-the-ball camera models include [[buy:square-golf-indoor|Square Golf indoor]] ([[price:square-golf-indoor]]), [[buy:square-golf-omni|Square Golf Omni]] ([[price:square-golf-omni]]), [[buy:skytrak-st-max|SkyTrak ST MAX]] ([[price:skytrak-st-max]]) and [[buy:garmin-approach-r50|Garmin Approach R50]] ([[price:garmin-approach-r50]]).</p>
+''' + SRC_COMPARE,
+)
+
+SUBSCRIPTIONS_PAGE = dict(
+    path="/compare/launch-monitor-subscriptions/",
+    title="Golf launch monitor subscriptions & software compared (UK)",
+    short="Subscriptions compared",
+    crumbs=COMP,
+    type="article",
+    description="Which golf launch monitor brands require an annual subscription in the UK: Shot Scope, Garmin, Rapsodo, SkyTrak, Uneekor, FlightScope and Bushnell/Foresight.",
+    faq=[
+        ("Which launch monitors work out of the box with no ongoing fee?", "Shot Scope LM1 includes the Shot Scope mobile app free for life. FlightScope Mevo+ charges no FlightScope subscription and bundles E6 courses. Foresight GC3 (£7,500 UK retail) includes FSX Play with no recurring subscription."),
+        ("Does GSPro require a brand subscription as well?", "It depends on the brand. FlightScope Mevo+ supports direct GSPro connection without a FlightScope fee, whereas Uneekor EYE MINI / LITE and Bushnell Launch Pro require an active paid software tier from the hardware maker in addition to a GSPro licence."),
+    ],
+    related=[
+        ("/compare/", "Compare all 8 brands", "Full hardware, placement and UK price matrix."),
+        ("/compare/radar-vs-camera-launch-monitors/", "Radar vs camera brands", "Compare room depth and dual-handed setup."),
+        ("/golf/launch-monitors-under-1000/", "Launch monitors under £1,000", "Compare budget units and what software comes included."),
+    ],
+    body='''<p class="lede">Upfront hardware price is only part of the cost of a home golf simulator. Several brands gate virtual courses, club data or third-party simulator access behind annual subscriptions.</p>
+<h2>Software &amp; subscription rules by brand</h2>
+<div class="tbl"><table>
+<thead><tr><th>Brand &amp; model</th><th>Included out of the box</th><th>What requires a paid subscription</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td><strong>Shot Scope LM1</strong> ([[price:shot-scope-lm1]])</td><td>On-unit 3.5" screen + free Shot Scope mobile app</td><td>No subscription required (range/net data only, not course sim)</td><td>Shot Scope UK product page</td></tr>
+<tr><td><strong>FlightScope Mevo+</strong> (£1,759 UK retail)</td><td>FS Golf app + bundled E6 courses; direct GSPro link</td><td>No FlightScope hardware fee (3rd-party GSPro licence separate)</td><td>FlightScope / UK retail docs</td></tr>
+<tr><td><strong>Foresight GC3</strong> (£7,500 UK retail)</td><td>Full ball &amp; club data + FSX Play software</td><td>No recurring Foresight fee</td><td>Foresight UK retail specs</td></tr>
+<tr><td><strong>Garmin R10 / R50</strong> ([[price:garmin-approach-r10]] / [[price:garmin-approach-r50]])</td><td>Shot metrics &amp; practice range</td><td>Garmin Golf membership required for virtual rounds</td><td>Amazon UK listings</td></tr>
+<tr><td><strong>Rapsodo MLM2PRO</strong> ([[price:rapsodo-mlm2pro]])</td><td>Core launch monitor session data</td><td>Rapsodo membership for full simulation &amp; replay tiers</td><td>Rapsodo FAQ</td></tr>
+<tr><td><strong>SkyTrak ST MAX</strong> ([[price:skytrak-st-max]])</td><td>Amazon UK listing includes 1-year software</td><td>Annual renewal required after year 1 for sim packages</td><td>Amazon UK listing</td></tr>
+<tr><td><strong>Uneekor EYE MINI / LITE</strong> (£1,699–£2,999 UK)</td><td>Player Package (range &amp; core data)</td><td>Paid Uneekor tier required for 3rd-party sim (GSPro) &amp; AI Trainer</td><td>Uneekor UK product pages</td></tr>
+<tr><td><strong>Bushnell Launch Pro</strong> (£2,490 Europe)</td><td>Ball data + 30-day trial</td><td>Foresight+ Silver/Gold membership required for club data &amp; simulation</td><td>Bushnell Golf Europe</td></tr>
+</tbody>
+</table></div>
+<h2>Before you commit</h2>
+<ul>
+<li>Check whether the software needs a Windows gaming PC (for example, Uneekor EYE MINI LITE requires a Windows PC and Ethernet cable) or runs on a tablet or built-in screen.</li>
+<li>Check regional terms: Bushnell notes that US-spec Launch Pro units require a US internet connection every 45 days, so UK buyers should check UK/EU sourcing.</li>
+<li>Verify current annual subscription pricing directly on the maker's UK page before ordering hardware.</li>
+</ul>
+''' + SRC_COMPARE,
+)
+
+COMPARE_PAGES = [COMPARE_PAGE, RADAR_VS_CAMERA_PAGE, SUBSCRIPTIONS_PAGE]
