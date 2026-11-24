@@ -325,7 +325,7 @@ COMPARE_PAGE = dict(
 <tr><td><strong>Amazon Basics</strong></td><td>Portable Golf Practice Net</td><td>2.44 m x 2.44 m</td><td>[[price:amazon-basics-golf-net]]</td><td>Portable practice net</td></tr>
 </tbody>
 </table></div>
-<p>See full product cards in [[link:/golf/nets-and-mats/|Nets and mats]], [[link:/golf/golf-nets-for-the-garden/|Garden golf nets]], and [[link:/golf/simulators/|Home simulator bays]].</p>
+<p>See full product cards in [[link:/golf/nets-and-mats/|Nets and mats]], [[link:/golf/golf-nets-for-the-garden/|Garden golf nets]], and [[link:/golf/simulators/|Home simulator bays]], or open the [[link:/compare/nets-and-mats-brands/|nets, enclosures and mats brand comparison]].</p>
 </section>
 
 <section data-cat="mats">
@@ -499,4 +499,53 @@ SIM_RACING_COMPARE_PAGE = dict(
 </ul>''',
 )
 
-COMPARE_PAGES = [COMPARE_PAGE, RADAR_VS_CAMERA_PAGE, SUBSCRIPTIONS_PAGE, SIM_RACING_COMPARE_PAGE]
+
+NETS_MATS_COMPARE_PAGE = dict(
+    path="/compare/nets-and-mats-brands/",
+    title="Golf net, enclosure and hitting mat brands compared (UK)",
+    short="Nets & mats brands",
+    crumbs=COMP,
+    type="article",
+    description="Compare UK golf practice net, enclosure, impact screen and hitting mat brands: SimSpace, Hillman PGM, FORZA, GoSports, Amazon Basics, GIRAFFYCO, COSTWAY and Spurk.",
+    faq=[
+        ("What is the difference between a practice net and a simulator enclosure?", "A practice net such as FORZA or Amazon Basics catches the ball for driving-range style sessions. A simulator enclosure such as the SimSpace golf simulator enclosure includes side netting, frame padding and an impact screen built to take a projected image."),
+        ("Which hitting mat size gives room to stand on the same surface?", "The GIRAFFYCO mat listed on Amazon UK measures 1.5 x 1.2 m so you can stand and hit on one mat, whereas compact strips like the Spurk Winter Strike Mat only sit under the ball."),
+    ],
+    related=[
+        ("/compare/", "Main brand comparison hub", "Compare all golf launch monitors, enclosures, mats, projectors and racing gear."),
+        ("/golf/nets-and-mats/", "Nets & mats buying guide", "Full Amazon UK product cards and sizes for every net and mat."),
+        ("/golf/simulators/", "Home simulator bays", "Enclosures, impact screens and short-throw projectors."),
+    ],
+    body='''<p class="lede">Whether you are setting up a pop-up garden net or a full garage bay with a projected screen, sizing and durability vary widely across brands. Every dimension and price below was checked on Amazon UK on [[checked]].</p>
+<h2>Practice net, cage &amp; enclosure brands</h2>
+<div class="tbl"><table>
+<thead><tr><th>Brand</th><th>Checked models</th><th>Listed dimensions</th><th>Use case</th><th>Price band ([[checked]])</th></tr></thead>
+<tbody>
+<tr><td><strong>SimSpace</strong></td><td>Deluxe Driving Net / Impact Screen / Simulator Enclosure</td><td>Net 2.5 x 2.5 x 3.84 m; Screen 2.4 x 2.5 m</td><td>Garden net through to full indoor bay</td><td>[[price:simspace-impact-screen]] – [[price:simspace-enclosure]]</td></tr>
+<tr><td><strong>Hillman PGM</strong></td><td>3m Practice Cage &amp; Net</td><td>3 m x 3 m</td><td>Full steel-framed garden or bay cage</td><td>[[price:hillman-pgm-3m-cage]]</td></tr>
+<tr><td><strong>FORZA</strong></td><td>7ft x 7ft Pop-Up Golf Net</td><td>7 ft x 7 ft (~2.1 x 2.1 m)</td><td>Compact pack-away garden practice</td><td>[[price:forza-7ft-net]]</td></tr>
+<tr><td><strong>Amazon Basics</strong></td><td>Portable Golf Practice Net</td><td>2.44 m x 2.44 m</td><td>Portable garden or garage net</td><td>[[price:amazon-basics-golf-net]]</td></tr>
+<tr><td><strong>GoSports</strong></td><td>Golf Simulator Impact Screen</td><td>See Amazon UK listing</td><td>Replacement or DIY bay projection screen</td><td>[[price:gosports-impact-screen]]</td></tr>
+</tbody>
+</table></div>
+<h2>Hitting mat brands</h2>
+<div class="tbl"><table>
+<thead><tr><th>Brand</th><th>Model</th><th>Listed footprint</th><th>Setup note</th><th>Price checked</th></tr></thead>
+<tbody>
+<tr><td><strong>GIRAFFYCO</strong></td><td>1.5 x 1.2 m hitting mat</td><td>1.5 m x 1.2 m</td><td>Large enough to stand and hit on the same mat</td><td>[[price:giraffyco-hitting-mat]]</td></tr>
+<tr><td><strong>COSTWAY</strong></td><td>Golf hitting mat</td><td>Multi-turf practice mat</td><td>Compact indoor or garden hitting surface</td><td>[[price:costway-hitting-mat]]</td></tr>
+<tr><td><strong>Spurk</strong></td><td>Winter Strike Mat</td><td>Compact strike strip</td><td>Portable fairway/winter strike mat</td><td>[[price:spurk-winter-strike-mat]]</td></tr>
+</tbody>
+</table></div>
+<h2>Safety &amp; clearance checks</h2>
+<ul>
+<li>Leave the maker's stated free space behind any net or impact screen so balls cannot rebound off or strike a wall behind the fabric.</li>
+<li>Garmin's launch monitor manuals note that enclosure frames should be padded to reduce ricochet, and that radar units placed behind a mat should sit level with or above the hitting surface.</li>
+</ul>
+<h2>Sources</h2><ul class="sources">
+<li>Garmin Approach R10 owner's manual: https://www8.garmin.com/manuals/webhelp/GUID-E2BBF6BE-4276-436F-B697-59ABEFD61933/EN-US/GUID-88F65277-47D4-403D-8F79-719CAA256D6B.html</li>
+<li>Amazon UK listings checked on [[checked]] (links tagged stewraw25-21).</li>
+</ul>''',
+)
+
+COMPARE_PAGES = [COMPARE_PAGE, RADAR_VS_CAMERA_PAGE, SUBSCRIPTIONS_PAGE, SIM_RACING_COMPARE_PAGE, NETS_MATS_COMPARE_PAGE]

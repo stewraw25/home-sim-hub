@@ -400,9 +400,10 @@ def layout(pg, body):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{u("/favicon.svg")}" type="image/svg+xml"><link rel="stylesheet" href="{u("/style.css")}">
 {ldjson}</head><body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site"><div class="wrap"><a class="logo" href="{u("/")}">{LOGO_ICON}<span>{wordmark_html}</span></a><nav class="main" aria-label="Main">{nav}</nav></div></header>
 {disc}{hero_html}
-<main><div class="wrap">{crumb_html}<article>{h1_block}{dated}{body}{faq_html}{rel_html}</article></div></main>
+<main id="main-content"><div class="wrap">{crumb_html}<article>{h1_block}{dated}{body}{faq_html}{rel_html}</article></div></main>
 <footer class="site"><div class="wrap"><strong>{esc(NAME)}</strong> &middot; {esc(sub_brand(CFG["tagline"]))}<nav aria-label="Footer">{foot_nav}</nav>
 <p>As an Amazon Associate, {esc(NAME)} earns from qualifying purchases. Prices and availability were checked on {CFG["price_checked"]} and can change at any time; the price on Amazon at the time of purchase applies. We research products from makers' published documents and Amazon UK listings and have not tested them ourselves.</p>
 <p>Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p></div></footer>
